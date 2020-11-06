@@ -3,19 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Code Quiz Challenge</title>
+    <link rel= "stylesheet" href = "assets/css/style.css">
 </head>
-<body>
-     <main>
-        <!-- Introduction to Quiz -->
-        <div class = "welcome-page">
-            <!-- We'll create space inbetween this later -->
-            <h2>Coding Quiz Challenge</h2>
-            <br>
-            <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
-            <br>
-            <a href = "quiz.html">Click To Start Quiz</a>
+    <body>
+        
+        <!-- header -->
+        <header class="header">
+            <div class="highscore" id="highscore">View High Scores</div>
+            <!-- Call from here -->
+            <div class="counter" id="timer">Time: 60 seconds</div> 
+        </header>
+        
+        <!-- Intro to Quiz -->
+        <div class="intro container" id="intro">
+            <h1>Jonathan's Random Crazy Quiz</h1>
+            <p>Get Ready to answer crazy wacky questions!</p>
+            <button id="start-btn" class="btn">Begin!</button>
         </div>
-    </main>
-</body>
+
+        <!-- Quiz Section -->
+        <div class="start-quiz container hidden" id="quiz">
+            <!-- Call from here -->
+            <h3 id="question">Questions</h3>
+            <!-- Call from here -->
+            <p id="answers"></p>
+            <p class="progress"></p>
+        </div>
+
+        <!-- results -->
+        <div class= "results container hidden" id="results"></div>
+
+        <script src="./assets/js/script.js"></script>
+    </body>
 </html>
