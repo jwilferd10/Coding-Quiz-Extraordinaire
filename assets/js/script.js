@@ -18,10 +18,10 @@ let timeLeft = 60;
 let questionNumber = -1; // Set to -1, setting to 0 will skip a question
 // These are our questions, for reading and length purposes it's condensed together. !!THESE QUESTIONS ARE PLACEHOLDERS!!
 const testQuestionsArr = [
-    { question: "What is 1+1?", answers: [ "A: 1","2","6","9" ], correctAnswer: "2" },
-    { question: "What is 2+2?", answers: [ "A: 4","6","8","12" ], correctAnswer: "4" },
-    { question: "What is 3x3?", answers: [ "A: 3","6","9","12" ], correctAnswer: "9" },
-    { question: "What is 4x4?", answers: [ "A: 2","4","8","16" ], correctAnswer: "16" }
+    { question: "What is 1+1?", answers: [ "1","2","6","9" ], correctAnswer: "2" },
+    { question: "What is 2+2?", answers: [ "4","6","8","12" ], correctAnswer: "4" },
+    { question: "What is 3x3?", answers: [ "3","6","9","12" ], correctAnswer: "9" },
+    { question: "What is 4x4?", answers: [ "2","4","8","16" ], correctAnswer: "16" }
 ];
 
 // Everything within here is going to start our timer and display our quiz
