@@ -1,15 +1,10 @@
-// !!REMEMBER: THESE ARE GLOBAL!! //
 let questionEl = document.getElementById("question");
 let answerEl = document.getElementById("answers");
 let scoreEl = document.getElementById("results");
 let answer;
-// This is our timer,  plugs into the HTML 
 let timerEl = document.getElementById("timer");
-// This is the amount of seconds in our timer, it counts down
 let timeLeft = 60; 
-// questionNumber is where our questions will start at.
-let questionNumber = -1; // Set to -1, setting to 0 will skip a question
-// These are our questions, for reading and length purposes it's condensed together. !!THESE QUESTIONS ARE PLACEHOLDERS!!
+let questionNumber = -1; // where our questions will start at, set to -1, setting to 0 will skip a question
 const testQuestionsArr = [
     { question: "What is 1+1?", answers: [ "1","2","6","9" ], correctAnswer: "2" },
     { question: "What is 2+2?", answers: [ "4","6","8","12" ], correctAnswer: "4" },

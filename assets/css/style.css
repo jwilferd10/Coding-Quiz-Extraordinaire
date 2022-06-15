@@ -45,3 +45,15 @@ header h1 {
 .hidden {
     display: none
 }
+
+footer {
+    position: fixed;
+    padding: 20px 35px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--primary-color);
+    color: var(--tertiary-color);
+    text-align: center; 
+}
