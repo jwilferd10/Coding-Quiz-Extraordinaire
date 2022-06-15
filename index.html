@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Quiz Challenge</title>
+    <link rel= "stylesheet" href = "assets/css/style.css">
+</head>
+    <body>
+        
+        <!-- header -->
+        <header class="header">
+            <div class="highscore" id="highscore">View High Scores</div>
+            <!-- Call from here -->
+            <div class="counter" id="timer">Time: 60 seconds</div> 
+        </header>
+        
+        <!-- Intro to Quiz -->
+        <div class="intro container" id="intro">
+            <h1>Jonathan's Random Crazy Quiz</h1>
+            <p>Get Ready to answer crazy wacky questions!</p>
+            <button id="start-btn" class="btn">Begin!</button>
+        </div>
+
+        <!-- Quiz Section -->
+        <div class="start-quiz container hidden" id="quiz">
+            <!-- Call from here -->
+            <h3 id="question">Questions</h3>
+            <!-- Call from here -->
+            <p id="answers"></p>
+            <p class="progress"></p>
+        </div>
+
+        <!-- results -->
+        <div class= "results container hidden" id="results"></div>
+
+        <footer>Made by Jonathan Wilferd</footer>
+
+        <script src="./assets/js/script.js"></script>
+    </body>
+</html>

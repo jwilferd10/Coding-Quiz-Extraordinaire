@@ -1,0 +1,15 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 30px;
+}
+
+.container {
+    padding: 30px;
+    text-align: center;
+}
+
+.hidden {
+    display: none
+}
