@@ -1,10 +1,3 @@
-/* Colors used throughout the webpage */
-:root {
-    --primary-color: #097392;
-    --secondary-color: #fff0ce;
-    --tertiary-color: #83b4b3;
-}
-
 /* preventing undesired lines on header and footer */
 * {
     margin: 0px;
@@ -12,17 +5,21 @@
     box-sizing: border-box;
 }
 
+/* styling the background and adding a multi-colored image with animation */
 body {
     background-color: #fff;
     height: 100%;
     width: 100%;
     background-image: linear-gradient(60deg, #ff6596, #60bef8, #d88cff);
-    background-size: 900% 900%;
+    background-size: 2000% 2000%;
     animation: animatedGradient 15s infinite linear;
 }
 
+section {
+    padding: 60px;
+}
+
 header {
-    background-color: var(--primary-color);
     padding: 20px 35px;
 }
 
@@ -49,6 +46,10 @@ header h1 {
     text-align: start;
 }
 
+.letsAddSpace {
+    padding: 30px;
+}
+
 .container {
     padding: 30px;
     text-align: center;
@@ -65,8 +66,6 @@ footer {
     right: 0;
     bottom: 0;
     width: 100%;
-    background-color: var(--primary-color);
-    color: var(--tertiary-color);
     text-align: left; 
 }
 
