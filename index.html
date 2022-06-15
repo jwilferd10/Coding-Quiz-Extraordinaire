@@ -8,33 +8,37 @@
 </head>
     <body>
         
-        <!-- header -->
-        <header class="header">
+        <header id="header">
+            <h1>JavaScript Based Coding Quiz Extraordinaire</h1>
+        </header>
+
+        <!-- nav -->
+        <section class="topBox">
             <div class="highscore" id="highscore">View High Scores</div>
             <!-- Call from here -->
             <div class="counter" id="timer">Time: 60 seconds</div> 
-        </header>
+        </section>
         
         <!-- Intro to Quiz -->
-        <div class="intro container" id="intro">
+        <section class="intro container" id="intro">
             <h1>Jonathan's Random Crazy Quiz</h1>
             <p>Get Ready to answer crazy wacky questions!</p>
             <button id="start-btn" class="btn">Begin!</button>
-        </div>
+        </section>
 
         <!-- Quiz Section -->
-        <div class="start-quiz container hidden" id="quiz">
+        <main class="start-quiz container hidden" id="quiz">
             <!-- Call from here -->
             <h3 id="question">Questions</h3>
             <!-- Call from here -->
             <p id="answers"></p>
             <p class="progress"></p>
-        </div>
+        </main>
 
         <!-- results -->
-        <div class= "results container hidden" id="results"></div>
+        <section class= "results container hidden" id="results"></section>
 
-        <footer>Made by Jonathan Wilferd</footer>
+        <footer>Made By: Jonathan Wilferd</footer>
 
         <script src="./assets/js/script.js"></script>
     </body>

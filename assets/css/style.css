@@ -1,4 +1,36 @@
-.header {
+/* Colors used throughout the webpage */
+:root {
+    --primary-color: #097392;
+    --secondary-color: #fff0ce;
+    --tertiary-color: #83b4b3;
+}
+
+/* preventing undesired lines on header and footer */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--secondary-color);
+}
+
+header {
+    background-color: var(--primary-color);
+    padding: 20px 35px;
+}
+
+header h1 {
+    font-weight: bold;
+    font-size: 32px;
+    color: var(--tertiary-color);
+    margin: 0;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.topBox {
     display: flex;
     flex-direction: row;
     justify-content: space-around;

@@ -1,10 +1,3 @@
-// Starting off by creating the skeleton of our HTML and JavaScript. 
-// Reminder: Create an if statement for the wrong answers. If the answer is wrong, -10 points/time. Else the test continues normally. Use alert to notify if right or wrong
-// First: Set up the questions and find a way to make it progress
-// Second: Set up a timer and enable it when the quiz begins
-// Third: Refactored the script
-// Fourth: undefined bug within line 62 and 103, try to fix this. Also add a high-score list at the end of the test.
-
 // !!REMEMBER: THESE ARE GLOBAL!! //
 let questionEl = document.getElementById("question");
 let answerEl = document.getElementById("answers");
