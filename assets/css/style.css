@@ -62,6 +62,11 @@ header h1 {
     display: inline-block;
 }
 
+#start-btn span:hover {
+    filter: blur(4px);
+    transition: 0.7s;
+}
+
 .container {
     padding: 30px;
     text-align: center;
