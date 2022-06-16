@@ -46,6 +46,10 @@ header h1 {
     text-align: start;
 }
 
+.intro ol li {
+    margin: 10px 0;
+}
+
 .letsAddSpace {
     padding: 30px;
 }
