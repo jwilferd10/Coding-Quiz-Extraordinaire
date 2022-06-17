@@ -61,6 +61,7 @@ function quizQuestions() {
     for (let i = 0; i < answers.length; i++) {
         // nextAnswer is creating a button element on the document
         let nextAnswer = document.createElement("button");
+        nextAnswer.className = "potentialAnswer";
         // nextAnswer is reaching into our array, preparing our answers for next stage
         nextAnswer.textContent = answers[i];
         // Remember: This is what appends our button to the webpage
