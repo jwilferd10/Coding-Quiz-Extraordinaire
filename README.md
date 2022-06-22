@@ -24,8 +24,6 @@
 - WHEN I click the start button
   - THEN a timer starts and I am presented with a question
 - WHEN I answer a question
-  - THEN I select which criteria to include in the password
-- WHEN prompted for the length of the password
   - THEN I am presented with another question
 - WHEN I answer a question incorrectly
   - THEN time is subtracted from the clock
@@ -46,7 +44,7 @@ Main Resources:
 ### Usage:
 - Click "Start"
 - Select choice of answer for each question
-- For ever CORRECT answer, iterate to next question
+- For every CORRECT answer, iterate to next question
 - For every INCORRECT answer, iterate to next question with -10 to the time
 - Final score varies
 - View High Scores showcases other users or self-progression 
