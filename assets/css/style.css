@@ -85,11 +85,25 @@ header h1 {
     transform: translateY(4px);
 }
 
-.potentialAnswer{
+.potentialAnswer {
     display: table;
-    margin: 7px 0;  
+    margin: 20px 0;  
     margin-left: auto;
     margin-right: auto; 
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    border: solid 2px white;
+    border-radius: 5px;
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+.potentialAnswer:active {
+    box-shadow: 10px 10px 10px #000;
+    transform: translateY(4px);
 }
 
 .container {
