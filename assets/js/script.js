@@ -111,7 +111,7 @@ function showProgress() {
 let showScore = function() {
     document.getElementById("quiz").classList.add("hidden");
     document.getElementById("results").classList.remove("hidden");
-    scoreEl.textContent = "Your Score: " + timeLeft;
+    scoreEl.textContent = "Your final score is: " + timeLeft;
 };
 
 // Button to start counter and quiz
