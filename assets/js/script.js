@@ -6,10 +6,11 @@ let timerEl = document.getElementById("timer");
 let timeLeft = 60; 
 let questionNumber = -1; // where our questions will start at, set to -1, setting to 0 will skip a question
 const testQuestionsArr = [
-    { question: "What is 1+1?", answers: [ "1","2","6","9" ], correctAnswer: "2" },
-    { question: "What is 2+2?", answers: [ "4","6","8","12" ], correctAnswer: "4" },
-    { question: "What is 3x3?", answers: [ "3","6","9","12" ], correctAnswer: "9" },
-    { question: "What is 4x4?", answers: [ "2","4","8","16" ], correctAnswer: "16" }
+    { question: "Commonly used data types DO Not Include:", answers: [ "1. strings","2. booleans","3. alerts","4. numbers" ], correctAnswer: "3. alerts" },
+    { question: "The condition in an if/else statement is enclosed with ______.", answers: [ "1. quotes","2. curly brackets","3. parenthesis","4. square brackets" ], correctAnswer: "2. curly brackets" },
+    { question: "Arrays in JavaScript can be used to store", answers: [ "1. numbers an strings","2. other arrays","3. booleans","4. all of the above" ], correctAnswer: "4. all of the above" },
+    { question: "String values must be enclosed within _____ when being assigned to variables.", answers: [ "1. commas","2. curly brackets","3. quotes","4. parenthesis" ], correctAnswer: "3. quotes" },
+    { question: "A very useful tool used during development and debugging for printing content to the debugger is:", answers: [ "1. JavaScript", "2. terminal/bash", "3. for loops", "4. console.log"], correctAnswer: "4. console.log" }
 ];
 
 // Everything within here is going to start our timer and display our quiz
