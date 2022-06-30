@@ -8,10 +8,10 @@ let questionNumber = -1; // questions will start at -1, using 0 will skip a ques
 
 const testQuestionsArr = [
     { question: "Commonly used data types DO Not Include:", answers: [ "1. strings","2. booleans","3. alerts","4. numbers" ], correctAnswer: "3. alerts" },
-    // { question: "The condition in an if/else statement is enclosed with ______.", answers: [ "1. quotes","2. curly brackets","3. parenthesis","4. square brackets" ], correctAnswer: "2. curly brackets" },
-    // { question: "Arrays in JavaScript can be used to store", answers: [ "1. numbers and strings","2. other arrays","3. booleans","4. all of the above" ], correctAnswer: "4. all of the above" },
-    // { question: "String values must be enclosed within _____ when being assigned to variables.", answers: [ "1. commas","2. curly brackets","3. quotes","4. parenthesis" ], correctAnswer: "3. quotes" },
-    // { question: "A very useful tool used during development and debugging for printing content to the debugger is:", answers: [ "1. JavaScript", "2. terminal/bash", "3. for loops", "4. console.log"], correctAnswer: "4. console.log" }
+    { question: "The condition in an if/else statement is enclosed with ______.", answers: [ "1. quotes","2. curly brackets","3. parenthesis","4. square brackets" ], correctAnswer: "2. curly brackets" },
+    { question: "Arrays in JavaScript can be used to store", answers: [ "1. numbers and strings","2. other arrays","3. booleans","4. all of the above" ], correctAnswer: "4. all of the above" },
+    { question: "String values must be enclosed within _____ when being assigned to variables.", answers: [ "1. commas","2. curly brackets","3. quotes","4. parenthesis" ], correctAnswer: "3. quotes" },
+    { question: "A very useful tool used during development and debugging for printing content to the debugger is:", answers: [ "1. JavaScript", "2. terminal/bash", "3. for loops", "4. console.log"], correctAnswer: "4. console.log" }
 ];
 
 let startQuiz = function() {
@@ -86,41 +86,18 @@ answerEl.addEventListener("click", function(event) {
     quizQuestions();
 });
 
-// conceal the quiz when finished & show the results
 let showScore = function() {
+    // conceal the quiz when finished & show the results
     document.getElementById("quiz").classList.add("hidden");
     document.getElementById("finalResults").classList.remove("hidden");
-    // scoreEl.textContent = "Your final score is: " + timeLeft;
 
     let h2Element = document.createElement('h2');
     h2Element.textContent = "Good Job! Let's See How You Did:";
     scoreEl.appendChild(h2Element);
 
     let scoreInfo = document.createElement('section');
-    // let finalScore = document.createElement('section');
-
     scoreInfo.textContent = "Your final score is: " + timeLeft;
-
     scoreEl.appendChild(scoreInfo);
-
-    // scoreInfo.textcontent = "Your final score is: " + timeLeft;
-
-
-    // // text
-    // let h2Element = document.createElement('h2');
-
-    // h2Element.textContent = "Good Job! Let's See How You Did:";
-
-    // scoreEl.appendChild(h2Element);
-
-    // high score
-    // let highScore = document.createElement('<h3>');
-    
-    // let highScore = scoreEl.textContent = "Your final score is: " + timeLeft;
-
-    // highScore.appendChild(scoreEl);
-
-    // scoreEl.textContent = "Your final score is: " + timeLeft;
 };
 
 let hideProgress = function() {
