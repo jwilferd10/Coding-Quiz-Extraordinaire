@@ -105,12 +105,20 @@ let showScore = function() {
     mainPageBtn.textContent = "Back To Main Page"
     scoreEl.appendChild(mainPageBtn);
 
+    mainPageBtn.addEventListener("click", function() {
+        document.getElementById("finalResults").classList.add("hidden");
+        document.getElementById("intro").classList.remove("hidden");
+    })
+
     let enterScoreBtn = document.createElement('button');
     enterScoreBtn.classList.add('btn');
     enterScoreBtn.textContent = "Enter My Score"
     scoreEl.appendChild(enterScoreBtn);
 
-
+    enterScoreBtn.addEventListener("click", function() {
+        // High-score entry page goes here
+    })
+    
 };
 
 let hideProgress = function() {
