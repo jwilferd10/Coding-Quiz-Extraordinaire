@@ -2,6 +2,7 @@
 let questionEl = document.getElementById("question");
 let answerEl = document.getElementById("answers");
 let scoreEl = document.getElementById("finalResults");
+// let enterScoreEl = document.getElementById("enterScore");
 let timerEl = document.getElementById("timer");
 let timeLeft = 60;
 let questionNumber = -1; // questions will start at -1, using 0 will skip a question
@@ -17,6 +18,7 @@ const testQuestionsArr = [
 let startQuiz = function() {
     // When the quiz is started, hide the intro and display the quiz to users
     document.getElementById("intro").classList.add("hidden");
+    
     document.getElementById("quiz").classList.remove("hidden");
     
     startTimer();
@@ -92,12 +94,12 @@ let showScore = function() {
     document.getElementById("finalResults").classList.remove("hidden");
 
     let h2Element = document.createElement('h2');
-    h2Element.textContent = "Good Job! Let's See How You Did:";
+    h2Element.textContent = "All done! Let's check your time:";
     scoreEl.appendChild(h2Element);
 
     // show user final score
     let scoreInfo = document.createElement('section');
-    scoreInfo.textContent = "Your final score is: " + timeLeft;
+    scoreInfo.textContent = "Your final score is " + timeLeft + " seconds";
     scoreEl.appendChild(scoreInfo);
 
     // bring user back to main page
@@ -118,6 +120,14 @@ let showScore = function() {
 
     enterScoreBtn.addEventListener("click", function() {
         // High-score entry page goes here
+        document.getElementById("finalResults").classList.add("hidden");
+        document.getElementById("highscore").classList.add("hidden");
+        document.getElementById("timer").classList.add("hidden");
+        document.getElementById("enterScore").classList.remove("hidden");
+
+        let finalScore = document.createElement('h3');
+        finalScore.textContent = "Your score: " + timeLeft + " seconds";
+        enterScore.appendChild(finalScore);
     })
     
 };
