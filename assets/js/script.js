@@ -107,8 +107,11 @@ let showScore = function() {
     scoreEl.appendChild(mainPageBtn);
 
     mainPageBtn.addEventListener("click", function() {
-        document.getElementById("finalResults").classList.add("hidden");
-        document.getElementById("intro").classList.remove("hidden");
+        location.reload();
+        // document.getElementById("finalResults").classList.add("hidden");
+        // document.getElementById("intro").classList.remove("hidden");
+        // timerEl.reset();
+        // questionEl.reset();
     })
 
     // high-score entry page 
