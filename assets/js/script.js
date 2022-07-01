@@ -2,27 +2,27 @@
 let questionEl = document.getElementById("question");
 let answerEl = document.getElementById("answers");
 let scoreEl = document.getElementById("finalResults");
-// let enterScoreEl = document.getElementById("enterScore");
 let timerEl = document.getElementById("timer");
 let timeLeft = 60;
 let questionNumber = -1; // questions will start at -1, using 0 will skip a question
 
+// quiz questions array with answer selections and correct answer
 const testQuestionsArr = [
     { question: "Commonly used data types DO Not Include:", answers: [ "1. strings","2. booleans","3. alerts","4. numbers" ], correctAnswer: "3. alerts" },
-    // { question: "The condition in an if/else statement is enclosed with ______.", answers: [ "1. quotes","2. curly brackets","3. parenthesis","4. square brackets" ], correctAnswer: "2. curly brackets" },
-    // { question: "Arrays in JavaScript can be used to store", answers: [ "1. numbers and strings","2. other arrays","3. booleans","4. all of the above" ], correctAnswer: "4. all of the above" },
-    // { question: "String values must be enclosed within _____ when being assigned to variables.", answers: [ "1. commas","2. curly brackets","3. quotes","4. parenthesis" ], correctAnswer: "3. quotes" },
-    // { question: "A very useful tool used during development and debugging for printing content to the debugger is:", answers: [ "1. JavaScript", "2. terminal/bash", "3. for loops", "4. console.log"], correctAnswer: "4. console.log" }
+    { question: "The condition in an if/else statement is enclosed with ______.", answers: [ "1. quotes","2. curly brackets","3. parenthesis","4. square brackets" ], correctAnswer: "2. curly brackets" },
+    { question: "Arrays in JavaScript can be used to store", answers: [ "1. numbers and strings","2. other arrays","3. booleans","4. all of the above" ], correctAnswer: "4. all of the above" },
+    { question: "String values must be enclosed within _____ when being assigned to variables.", answers: [ "1. commas","2. curly brackets","3. quotes","4. parenthesis" ], correctAnswer: "3. quotes" },
+    { question: "A very useful tool used during development and debugging for printing content to the debugger is:", answers: [ "1. JavaScript", "2. terminal/bash", "3. for loops", "4. console.log"], correctAnswer: "4. console.log" }
 ];
 
 let startQuiz = function() {
     // When the quiz is started, hide the intro and display the quiz to users
-    document.getElementById("intro").classList.add("hidden");
-    
+    document.getElementById("intro").classList.add("hidden");  
     document.getElementById("quiz").classList.remove("hidden");
     
+    // start countdown
     startTimer();
-
+    // present questions from array
     quizQuestions();
 };
 
@@ -44,9 +44,10 @@ let quizQuestions = function() {
     // increment through array
     questionNumber++
 
-    // show's current question
+    // questionEl takes the textContent from questionNumber and displays the current question from the array
     questionEl.textContent = testQuestionsArr[questionNumber].question
-        
+    
+    // as users progress onto the next question, this removes the last questions answers and allows the next batch of answers to appear.
     answerEl.innerHTML = "";
 
     // This displays our list of possible answers
@@ -57,19 +58,16 @@ let quizQuestions = function() {
 
     // display the array of possible answers
     for (let i = 0; i < answers.length; i++) {
-
         let answerChoices = document.createElement("button");
-
         answerChoices.className = "potentialAnswer";
-
         answerChoices.textContent = answers[i];
-
         answerBtn = answerEl.appendChild(answerChoices);
     }
 };
 
-//Answer Choice Buttons
+// connected to the answer buttons generated in the above code
 answerEl.addEventListener("click", function(event) {
+    // when the button is clicked this furthers users progress
     let progressEl = document.getElementsByClassName("progress") [0]
 
     if (answer === event.target.textContent) {
@@ -85,9 +83,23 @@ answerEl.addEventListener("click", function(event) {
         timeLeft = timeLeft - 10;
         showProgress();
     }
+    // continue to iterate through next questions
     quizQuestions();
 });
 
+// showProgress displays notification whether answer is right or wrong
+let showProgress = function() {
+    let progressEl = document.getElementsByClassName("progress") [0]
+    progressEl.removeAttribute("style");
+};
+
+// hideProgress removes the notification after a set amount of time
+let hideProgress = function() {
+    let progressEl = document.getElementsByClassName("progress") [0]
+    progressEl.style.display="none";
+};
+
+// show user score after the quiz is complete. Present user option to go back to main page or log current score.
 let showScore = function() {
     // conceal the quiz when finished & show the results
     document.getElementById("quiz").classList.add("hidden");
@@ -108,6 +120,7 @@ let showScore = function() {
     mainPageBtn.textContent = "Back To Main Page"
     scoreEl.appendChild(mainPageBtn);
 
+    // reloads the entire page, resetting the time and the question in the process
     mainPageBtn.addEventListener("click", function() {
         location.reload();
     })
@@ -125,21 +138,12 @@ let showScore = function() {
         document.getElementById("timer").classList.add("hidden");
         document.getElementById("enterScore").classList.remove("hidden");
 
+        // user initials entry
         let finalScore = document.createElement('h3');
         finalScore.textContent = "Your score: " + timeLeft + " seconds";
         enterScore.appendChild(finalScore);
     })
     
-};
-
-let hideProgress = function() {
-    let progressEl = document.getElementsByClassName("progress") [0]
-    progressEl.style.display="none";
-};
-
-let showProgress = function() {
-    let progressEl = document.getElementsByClassName("progress") [0]
-    progressEl.removeAttribute("style");
 };
 
 document.querySelector("#start-btn").addEventListener("click", startQuiz);
