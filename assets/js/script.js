@@ -95,11 +95,12 @@ let showScore = function() {
     h2Element.textContent = "Good Job! Let's See How You Did:";
     scoreEl.appendChild(h2Element);
 
+    // show user final score
     let scoreInfo = document.createElement('section');
     scoreInfo.textContent = "Your final score is: " + timeLeft;
     scoreEl.appendChild(scoreInfo);
 
-    // create two buttons, one that returns user back to main page OR take user to enter their high score 
+    // bring user back to main page
     let mainPageBtn = document.createElement('button');
     mainPageBtn.classList.add('btn');
     mainPageBtn.textContent = "Back To Main Page"
@@ -110,6 +111,7 @@ let showScore = function() {
         document.getElementById("intro").classList.remove("hidden");
     })
 
+    // high-score entry page 
     let enterScoreBtn = document.createElement('button');
     enterScoreBtn.classList.add('btn');
     enterScoreBtn.textContent = "Enter My Score"
