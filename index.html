@@ -17,13 +17,15 @@
 
         <!-- nav -->
         <section id="topBox" class="backGround">
+            <!-- High Scores -->
             <div class="highscore" id="highscore">View High Scores</div>
-            <!-- Call from here -->
+            <!-- Timer -->
             <div class="counter" id="timer">Time: 60 seconds</div> 
         </section>
         
-        <!-- Intro to Quiz -->
+        <!-- Main Page -->
         <section class="intro container" id="intro">
+            <!-- Instructions -->
             <h1 class="letsAddSpace">Before You Start:</h1>
             <ol>
                 <li>You have a full minute to answer all the questions</li>
@@ -31,28 +33,31 @@
                 <li>Upon finishing the quiz the time you have left is your final score</li>
                 <li>Good luck and have fun!</li>
             </ol>
+
+            <!-- Start Quiz -->
             <h3 class="letsAddSpace">Are You Ready?</h3>
             <button id="start-btn" class="btn"><span>Start! </span></button>
         </section>
 
         <!-- Quiz Section -->
         <main class="start-quiz container hidden" id="quiz">
-            <!-- Call from here -->
+            <!-- Questions -->
             <h2 id="question">Questions</h2>
-            <!-- Call from here -->
+            <!-- Answers -->
             <p id="answers"></p>
+            <!-- Correct or Incorrect Messages-->
             <p class="progress"></p>
         </main>
 
-        <!-- results -->
-        <section class= "finalResults container hidden" id="finalResults">
+        <!-- Results -->
+        <section class= "finalResults container hidden" id="finalResults"></section>
 
-        </section>
-
+        <!-- Footer -->
         <footer>
             <p>&copy;2022 by Jonathan Wilferd</p>
         </footer>
 
+        <!-- Project GitHub Link -->
         <section>
             <a href="https://github.com/jwilferd10/Code-Quiz" target="_blank">
                 <img src="./assets/img/GitHub.png" alt="GitHub Logo and Link" id="footerImg">
