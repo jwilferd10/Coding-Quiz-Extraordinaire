@@ -129,7 +129,10 @@ header h1 {
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
 }
 
-
+.btn:active {
+    box-shadow: 10px 10px 10px #000;
+    transform: translateY(4px);
+}
 
 .container {
     padding: 125px;
