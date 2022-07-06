@@ -152,30 +152,11 @@ let showScore = function() {
 
         let finalScore = timeLeft;
         
-        //localStorage here
-        // function renderEnteredInitials() {
-        //     // Retrieve the last initials entered from localStorage
-        //     let initials = localStorage.getItem('initials');
-        //     let finalScore = localStorage.getItem('finalScore');
-        
-        //     if (initials === null || finalScore === null) {
-        //         return;
-        //     }
-        
-        //     // Text of the userInitialsSpan corresponding values from localStorage
-        //     userInitialsSpan.textContent = initials;
-        //     // userScoreSpan.textContent = finalScore;
-        //     userFinalScoreSpan.textContent = finalScore;
-        // }
-        
-        // renderEnteredInitials();
-        
         function displayMessage(type, message){
             msgDiv.textContent = message;
             msgDiv.setAttribute('class', type);
         }
         
-
         // Saves user initials
         saveButton.addEventListener('click', function(event) {
             event.preventDefault();
