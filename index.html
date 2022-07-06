@@ -54,11 +54,25 @@
 
         <!-- User Scores -->
         <section id="enterScore" class="container hidden">
-            <h2>&#129504; Great Job! &#129504;</h2>
-            <!-- <p>Enter Your Initials:</p> -->
-            <label for="initials">Enter Initials:</label>
-            <input type="text" id="initials" name="initials" placeholder="Must be 2-3 Characters" required minlength="2" maxlength="3">
-            <button>Submit</button>
+            <form method="POST">
+                <div>
+                    <!-- Enter Initials -->
+                    <label for="initials">Enter Initials:</label>
+                    <input    type="text" 
+                    id="initials" 
+                    name="initials" 
+                    placeholder="Must be 2-3 Characters" 
+                    required minlength="2" 
+                    maxlength="3"
+                    />
+                    <button id="save">Submit</button>
+                </div>
+                <div id="msg"></div>
+            </form>
+
+            <!-- <h2>Last Registered Initials:</h2>
+            <p>User Initials: <span id="user-initials"></span></p>
+            <p>Registered Final Score: <span id="user-FinalScore"></span></p> -->
         </section>
 
         <!-- Footer -->

@@ -6,13 +6,20 @@ let timerEl = document.getElementById("timer");
 let timeLeft = 60;
 let questionNumber = -1; // questions will start at -1, using 0 will skip a question
 
+let initialsInput = document.querySelector('#initials');
+let saveButton = document.querySelector('#save')
+let msgDiv = document.querySelector('#msg')
+// let userInitialsSpan = document.querySelector('user-initials')
+// let userFinalScoreSpan = document.querySelector('user-FinalScore');
+
+
 // quiz questions array with answer selections and correct answer
 const testQuestionsArr = [
     { question: "Commonly used data types DO Not Include:", answers: [ "1. strings","2. booleans","3. alerts","4. numbers" ], correctAnswer: "3. alerts" },
-    { question: "The condition in an if/else statement is enclosed with ______.", answers: [ "1. quotes","2. curly brackets","3. parenthesis","4. square brackets" ], correctAnswer: "2. curly brackets" },
-    { question: "Arrays in JavaScript can be used to store", answers: [ "1. numbers and strings","2. other arrays","3. booleans","4. all of the above" ], correctAnswer: "4. all of the above" },
-    { question: "String values must be enclosed within _____ when being assigned to variables.", answers: [ "1. commas","2. curly brackets","3. quotes","4. parenthesis" ], correctAnswer: "3. quotes" },
-    { question: "A very useful tool used during development and debugging for printing content to the debugger is:", answers: [ "1. JavaScript", "2. terminal/bash", "3. for loops", "4. console.log"], correctAnswer: "4. console.log" }
+    // { question: "The condition in an if/else statement is enclosed with ______.", answers: [ "1. quotes","2. curly brackets","3. parenthesis","4. square brackets" ], correctAnswer: "2. curly brackets" },
+    // { question: "Arrays in JavaScript can be used to store", answers: [ "1. numbers and strings","2. other arrays","3. booleans","4. all of the above" ], correctAnswer: "4. all of the above" },
+    // { question: "String values must be enclosed within _____ when being assigned to variables.", answers: [ "1. commas","2. curly brackets","3. quotes","4. parenthesis" ], correctAnswer: "3. quotes" },
+    // { question: "A very useful tool used during development and debugging for printing content to the debugger is:", answers: [ "1. JavaScript", "2. terminal/bash", "3. for loops", "4. console.log"], correctAnswer: "4. console.log" }
 ];
 
 let startQuiz = function() {
@@ -139,11 +146,72 @@ let showScore = function() {
         document.getElementById("enterScore").classList.remove("hidden");
 
         // user initials entry
-        let finalScore = document.createElement('h3');
-        finalScore.textContent = "Your score: " + timeLeft + " seconds";
-        enterScore.appendChild(finalScore);
+        let scoreNotification = document.createElement('h3');
+        scoreNotification.textContent = "Your score: " + timeLeft + " seconds";
+        enterScore.appendChild(scoreNotification);
+
+        let finalScore = timeLeft;
+        
+        //localStorage here
+        // function renderEnteredInitials() {
+        //     // Retrieve the last initials entered from localStorage
+        //     let initials = localStorage.getItem('initials');
+        //     let finalScore = localStorage.getItem('finalScore');
+        
+        //     if (initials === null || finalScore === null) {
+        //         return;
+        //     }
+        
+        //     // Text of the userInitialsSpan corresponding values from localStorage
+        //     userInitialsSpan.textContent = initials;
+        //     // userScoreSpan.textContent = finalScore;
+        //     userFinalScoreSpan.textContent = finalScore;
+        // }
+        
+        // renderEnteredInitials();
+        
+        function displayMessage(type, message){
+            msgDiv.textContent = message;
+            msgDiv.setAttribute('class', type);
+        }
+        
+
+        // Saves user initials
+        saveButton.addEventListener('click', function(event) {
+            event.preventDefault();
+        
+            let initials = document.querySelector('#initials').value;
+            // let finalScore = timeLeft;
+        
+            if (initials === '') {
+                displayMessage('error', 'Initial cannot be blank!');
+            } else {
+                displayMessage('success', 'Registered Successfully');
+        
+            localStorage.setItem('initials', initials);
+            localStorage.setItem('finalScore', finalScore);
+        
+            // renderEnteredInitials();
+            }
+        });
+
+        // lets try to return users back to main page
+        let returnBtn = document.createElement('button');
+        returnBtn.classList.add('btn');
+        returnBtn.textContent = "Return";
+        enterScore.appendChild(returnBtn);
+        
+        // reloads the entire page, resetting the time and the question in the process
+        returnBtn.addEventListener("click", function() {
+            location.reload();
+        })
     })
-    
 };
 
+let showHighScore = function() {
+ console.log("I've been clicked");
+}
+
 document.querySelector("#start-btn").addEventListener("click", startQuiz);
+
+document.addEventListener("click", showHighScore)
