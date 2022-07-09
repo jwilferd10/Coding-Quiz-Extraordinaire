@@ -1,3 +1,4 @@
+// When the quiz is over, there is an error at at around line 46 (this is possibly because there's nothing left within the array)
 let questionEl = document.getElementById("question");
 let answerEl = document.getElementById("answers");
 let scoreEl = document.getElementById("finalResults");
@@ -9,8 +10,8 @@ let initialsInput = document.querySelector('#initials');
 let saveButton = document.querySelector('#save');
 let msgDiv = document.querySelector('#msg');
 
+let userInfoArr = [];
 
-// When the quiz is over, there is an error at at around line 46 (this is possibly because there's nothing left within the array)
 // quiz questions array with answer selections and correct answer
 const testQuestionsArr = [
     { question: "Commonly used data types DO Not Include:", answers: [ "1. strings","2. booleans","3. alerts","4. numbers" ], correctAnswer: "3. alerts" },
@@ -148,30 +149,27 @@ let endQuiz = function() {
         scoreNotification.textContent = "Your score: " + timeLeft + " seconds";
         enterScore.appendChild(scoreNotification);
 
-        let finalScore = timeLeft;
-        
-        function displayMessage(type, message){
-            msgDiv.textContent = message;
-            msgDiv.setAttribute('class', type);
-        }
+        // let finalScore = timeLeft;
         
         // Saves user initials
         saveButton.addEventListener('click', function(event) {
             event.preventDefault();
-        
-            let initials = document.querySelector('#initials').value;
-            // let finalScore = timeLeft;
-        
-            if (initials === '') {
-                displayMessage('error', 'Initial cannot be blank!');
-            } else {
-                displayMessage('success', 'Registered Successfully');
-        
-            localStorage.setItem('initials', initials);
-            localStorage.setItem('finalScore', finalScore);
-        
-            // renderEnteredInitials();
+            let initialsInput = document.querySelector('#initials').value;
+            let finalScore = timeLeft;
+
+            if (!initialsInput) {
+                alert("You need to enter your initials!");
+                return false;
             }
+
+            let userDataObj = {
+                name: initialsInput,
+                time: finalScore
+            };
+
+            userInfoArr.push(userDataObj);
+
+            localStorage.setItem("userInfoArr", JSON.stringify(userInfoArr));
         });
 
         // lets try to return users back to main page
@@ -188,7 +186,7 @@ let endQuiz = function() {
 };
 
 let showHighScore = function() {
- console.log("I've been clicked");
+//  console.log("I've been clicked");
 }
 
 document.querySelector("#start-btn").addEventListener("click", startQuiz);
