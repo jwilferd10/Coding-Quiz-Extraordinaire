@@ -1,4 +1,3 @@
-// When the quiz is over, there is an error at at around line 46 (this is possibly because there's nothing left within the array)
 let questionEl = document.getElementById("question");
 let answerEl = document.getElementById("answers");
 let scoreEl = document.getElementById("finalResults");
@@ -7,12 +6,11 @@ let timeLeft = 60;
 let questionNumber = -1; // questions will start at -1, using 0 will skip a question
 
 let initialsInput = document.querySelector('#initials');
-let saveButton = document.querySelector('#save')
-let msgDiv = document.querySelector('#msg')
-// let userInitialsSpan = document.querySelector('user-initials')
-// let userFinalScoreSpan = document.querySelector('user-FinalScore');
+let saveButton = document.querySelector('#save');
+let msgDiv = document.querySelector('#msg');
 
 
+// When the quiz is over, there is an error at at around line 46 (this is possibly because there's nothing left within the array)
 // quiz questions array with answer selections and correct answer
 const testQuestionsArr = [
     { question: "Commonly used data types DO Not Include:", answers: [ "1. strings","2. booleans","3. alerts","4. numbers" ], correctAnswer: "3. alerts" },
@@ -42,7 +40,7 @@ let startTimer = function() {
 
         if (timeLeft === 0 || questionNumber === testQuestionsArr.length) {
             clearInterval(timer);
-            setTimeout(showScore, 200);
+            setTimeout(endQuiz, 200);
         }
     }, 1000);
 };
@@ -107,7 +105,7 @@ let hideProgress = function() {
 };
 
 // show user score after the quiz is complete. Present user option to go back to main page or log current score.
-let showScore = function() {
+let endQuiz = function() {
     // conceal the quiz when finished & show the results
     document.getElementById("quiz").classList.add("hidden");
     document.getElementById("finalResults").classList.remove("hidden");
