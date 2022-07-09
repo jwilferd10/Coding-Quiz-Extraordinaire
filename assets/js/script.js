@@ -11,6 +11,9 @@ let saveButton = document.querySelector('#save');
 let msgDiv = document.querySelector('#msg');
 
 let userInfoArr = [];
+let totalScores = 10;
+
+
 
 // quiz questions array with answer selections and correct answer
 const testQuestionsArr = [
@@ -169,6 +172,20 @@ let endQuiz = function() {
 
             userInfoArr.push(userDataObj);
 
+            // use sort() to flesh out the userInfoArr to pick the highest answer
+            userInfoArr.sort (function highestScore(a, b) {
+                return b.time - a.time;
+            })
+            
+            // at index 10 remove anything after
+            userInfoArr.splice(10);
+
+            // check to see if userDataObj is working correctly, it is.
+            console.log(userDataObj);
+            // Let's see what's inside the array
+            console.log(userInfoArr);
+
+            // update the high scores array
             localStorage.setItem("userInfoArr", JSON.stringify(userInfoArr));
         });
 
@@ -185,10 +202,21 @@ let endQuiz = function() {
     })
 };
 
-let showHighScore = function() {
-//  console.log("I've been clicked");
-}
+// let loadHighScore = function() {
+//     let loadScore = localStorage.getItem("userInfoArr");
+//     if (!userInfoArr) {
+//         return false;
+//     }
+//     console.log("Thank goodness, your saves have been found!");
+
+//     loadScore = JSON.parse(loadScore)
+
+//     for (let i = 0; i < loadScore.length; i++) {
+        
+        
+//     }
+// }
 
 document.querySelector("#start-btn").addEventListener("click", startQuiz);
 
-document.addEventListener("click", showHighScore)
+// document.addEventListener("click", showHighScore)
