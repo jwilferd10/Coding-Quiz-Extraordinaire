@@ -143,7 +143,7 @@ let endQuiz = function() {
     enterScoreBtn.addEventListener("click", function() {
         // High-score entry page goes here
         document.getElementById("finalResults").classList.add("hidden");
-        document.getElementById("highscore").classList.add("hidden");
+        // document.getElementById("highscore").classList.add("hidden");
         document.getElementById("timer").classList.add("hidden");
         document.getElementById("enterScore").classList.remove("hidden");
 
