@@ -49,8 +49,9 @@ header h1 {
     flex-direction: row;
     justify-content: space-around;
     padding: 30px;
+    float: right;
+    padding-right: 30%
 }
-
 
 .intro ol {
     display: table;

@@ -202,20 +202,8 @@ let endQuiz = function() {
     })
 };
 
-// let loadHighScore = function() {
-//     let loadScore = localStorage.getItem("userInfoArr");
-//     if (!userInfoArr) {
-//         return false;
-//     }
-//     console.log("Thank goodness, your saves have been found!");
+// NEXT: WORK ON LOADING THE HIGHSCORES
 
-//     loadScore = JSON.parse(loadScore)
-
-//     for (let i = 0; i < loadScore.length; i++) {
-        
-        
-//     }
-// }
 
 document.querySelector("#start-btn").addEventListener("click", startQuiz);
 
