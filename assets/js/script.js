@@ -15,8 +15,8 @@ let userInfoArr = [];
 let totalScores = 10;
 
 //high scores
-const highScoresList = document.getElementById("highScoresList");
-const highScores = JSON.parse(localStorage.getItem(userInfoArr)) || [];
+// let highScoresList = document.getElementById("highScoresList");
+// let highScores = JSON.parse(localStorage.getItem(userInfoArr)) || [];
 
 
 // quiz questions array with answer selections and correct answer
@@ -162,36 +162,7 @@ let endQuiz = function() {
         saveButton.addEventListener('click', function(event) {
             event.preventDefault();
             saveScore();
-            // let initialsInput = document.querySelector('#initials').value;
-            // let finalScore = timeLeft;
-
-            // if (!initialsInput) {
-            //     alert("You need to enter your initials!");
-            //     return false;
-            // }
-
-            // let userDataObj = {
-            //     name: initialsInput,
-            //     time: finalScore
-            // };
-
-            // userInfoArr.push(userDataObj);
-
-            // // use sort() to flesh out the userInfoArr to pick the highest answer
-            // userInfoArr.sort (function highestScore(a, b) {
-            //     return b.time - a.time;
-            // })
-            
-            // // at index 10 remove anything after
-            // userInfoArr.splice(10);
-
-            // // check to see if userDataObj is working correctly, it is.
-            // console.log(userDataObj);
-            // // Let's see what's inside the array
-            // console.log(userInfoArr);
-
-            // // update the high scores array
-            // localStorage.setItem("userInfoArr", JSON.stringify(userInfoArr));
+            // save score code was here
         });
 
         // lets try to return users back to main page
@@ -208,6 +179,7 @@ let endQuiz = function() {
 };
 
 let saveScore = function() {
+    // Grab the value from initial and timeLeft
     let initialsInput = document.querySelector('#initials').value;
     let finalScore = timeLeft;
 
@@ -241,13 +213,26 @@ let saveScore = function() {
 }
 
 // create a function that shows high scores from localStorage
-let showHighScore = function(event) {
+let showHighScore = function(saveScore) {
     // clicking the high score button reveals the CSS, hides the intro
     document.getElementById("scoreSectionID").classList.remove("hidden");
     document.getElementById("intro").classList.add("hidden");
 
-    console.log(highScores.name);
-    console.log(highScores.time);
+    let highScores = localStorage.getItem("userInfoArr");
+
+    if (!highScores) {
+        return false;
+    } 
+    console.log("Saved score found!");
+
+    highScores = JSON.parse(highScores);
+
+    // let highScoresList = document.getElementById("highScoresList");
+    // let highScores = JSON.parse(localStorage.getItem(userInfoArr)) || [];
+
+    console.log(highScores);
+
+    // console.log(userDataObj);
     
 };
 
