@@ -10,9 +10,13 @@ let initialsInput = document.querySelector('#initials');
 let saveButton = document.querySelector('#save');
 let msgDiv = document.querySelector('#msg');
 
+// This is where our highScores are saved
 let userInfoArr = [];
 let totalScores = 10;
 
+//high scores
+// const highScoresList = document.getElementById("highScoresList");
+// const highScores = JSON.parse(localStorage.getItem(userInfoArr)) || [];
 
 
 // quiz questions array with answer selections and correct answer
@@ -202,9 +206,19 @@ let endQuiz = function() {
     })
 };
 
-// NEXT: WORK ON LOADING THE HIGHSCORES
+// create a function that shows high scores from localStorage
+let showHighScore = function() {
+    // clicking the high score button reveals the CSS, hides the intro
+    document.getElementById("scoreSectionID").classList.remove("hidden");
+    document.getElementById("intro").classList.add("hidden");
+    
+    // Show the users with the highest scores
+
+
+};
 
 
 document.querySelector("#start-btn").addEventListener("click", startQuiz);
+document.querySelector("#highscore").addEventListener("click", showHighScore)
 
 // document.addEventListener("click", showHighScore)
