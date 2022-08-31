@@ -15,8 +15,8 @@ let userInfoArr = [];
 let totalScores = 10;
 
 //high scores
-// const highScoresList = document.getElementById("highScoresList");
-// const highScores = JSON.parse(localStorage.getItem(userInfoArr)) || [];
+const highScoresList = document.getElementById("highScoresList");
+const highScores = JSON.parse(localStorage.getItem(userInfoArr)) || [];
 
 
 // quiz questions array with answer selections and correct answer
@@ -212,9 +212,6 @@ let showHighScore = function() {
     document.getElementById("scoreSectionID").classList.remove("hidden");
     document.getElementById("intro").classList.add("hidden");
     
-    // Show the users with the highest scores
-
-
 };
 
 
