@@ -213,7 +213,7 @@ let saveScore = function() {
 }
 
 // create a function that shows high scores from localStorage
-let showHighScore = function(saveScore) {
+let showHighScore = function() {
     // clicking the high score button reveals the CSS, hides the intro
     document.getElementById("scoreSectionID").classList.remove("hidden");
     document.getElementById("intro").classList.add("hidden");
@@ -227,13 +227,14 @@ let showHighScore = function(saveScore) {
 
     highScores = JSON.parse(highScores);
 
-    // let highScoresList = document.getElementById("highScoresList");
-    // let highScores = JSON.parse(localStorage.getItem(userInfoArr)) || [];
-
     console.log(highScores);
-
-    // console.log(userDataObj);
     
+
+    // add an event listener to take users home
+    let homeBtnEl = document.getElementById("homebtn")
+    homeBtnEl.addEventListener("click", function() {
+        location.reload();
+    })
 };
 
 
