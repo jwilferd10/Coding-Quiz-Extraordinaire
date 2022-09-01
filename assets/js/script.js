@@ -2,6 +2,7 @@
 let questionEl = document.getElementById("question");
 let answerEl = document.getElementById("answers");
 let scoreEl = document.getElementById("finalResults");
+let highScoresListEl = document.getElementById("highScoresList");
 let timerEl = document.getElementById("timer");
 let timeLeft = 60;
 let questionNumber = -1; // questions will start at -1, using 0 will skip a question
@@ -227,8 +228,16 @@ let showHighScore = function() {
 
     highScores = JSON.parse(highScores);
 
+    for (var i = 0; i < highScores.length; i++) {
+
+        let listElement = document.createElement('li');
+        listElement.className = "task-item"
+        listElement.innerHTML =highScores[i].name + " - " + highScores[i].time;
+        highScoresListEl.appendChild(listElement);
+    }
+
+    // make sure the scores are being recognized.
     console.log(highScores);
-    
 
     // add an event listener to take users home
     let homeBtnEl = document.getElementById("homebtn")
@@ -236,7 +245,6 @@ let showHighScore = function() {
         location.reload();
     })
 };
-
 
 document.querySelector("#start-btn").addEventListener("click", startQuiz);
 document.querySelector("#highscore").addEventListener("click", showHighScore)
