@@ -13,7 +13,7 @@ let msgDiv = document.querySelector('#msg');
 
 // This is where our highScores are saved
 let userInfoArr = [];
-let totalScores = 10;
+let totalScores = 5;
 
 // quiz questions array with answer selections and correct answer
 const testQuestionsArr = [
@@ -196,8 +196,8 @@ let saveScore = function() {
         return b.time - a.time;
     })
     
-    // at index 10 remove anything after
-    userInfoArr.splice(10);
+    // at index 5 remove anything after
+    userInfoArr.splice(5);
 
     // check to see if userDataObj is working correctly, it is.
     console.log(userDataObj);
