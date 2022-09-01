@@ -15,11 +15,6 @@ let msgDiv = document.querySelector('#msg');
 let userInfoArr = [];
 let totalScores = 10;
 
-//high scores
-// let highScoresList = document.getElementById("highScoresList");
-// let highScores = JSON.parse(localStorage.getItem(userInfoArr)) || [];
-
-
 // quiz questions array with answer selections and correct answer
 const testQuestionsArr = [
     { question: "Commonly used data types DO Not Include:", answers: [ "1. strings","2. booleans","3. alerts","4. numbers" ], correctAnswer: "3. alerts" },
@@ -231,8 +226,8 @@ let showHighScore = function() {
     for (var i = 0; i < highScores.length; i++) {
 
         let listElement = document.createElement('li');
-        listElement.className = "task-item"
-        listElement.innerHTML =highScores[i].name + " - " + highScores[i].time;
+        listElement.className = "userScore"
+        listElement.innerHTML = highScores[i].name + " - " + highScores[i].time;
         highScoresListEl.appendChild(listElement);
     }
 
@@ -248,5 +243,3 @@ let showHighScore = function() {
 
 document.querySelector("#start-btn").addEventListener("click", startQuiz);
 document.querySelector("#highscore").addEventListener("click", showHighScore)
-
-// document.addEventListener("click", showHighScore)
