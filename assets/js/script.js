@@ -213,6 +213,7 @@ let showHighScore = function() {
     // clicking the high score button reveals the CSS, hides the intro
     document.getElementById("scoreSectionID").classList.remove("hidden");
     document.getElementById("intro").classList.add("hidden");
+    document.getElementById("timer").classList.add("hidden");
 
     let highScores = localStorage.getItem("userInfoArr");
 
