@@ -114,6 +114,22 @@ header h1 {
     transform: translateY(4px);
 }
 
+
+.initialContainer {
+    position: relative;
+    top: 15rem;
+}
+
+.returnBtn {
+    position: relative;
+    top: 15rem;
+}
+
+.alertUserScore {
+    position: relative;
+    top: 10rem;
+}
+
 .btn {
     margin: 10px;
     padding: 5px;
@@ -135,6 +151,10 @@ header h1 {
     transform: translateY(4px);
 }
 
+
+.enterScore {
+    position: relative;
+}
 
 #scoreHeader {
     padding-bottom: 20px;

@@ -19,10 +19,10 @@ let totalScores = 5;
 // quiz questions array with answer selections and correct answer
 const testQuestionsArr = [
     { question: "Commonly used data types DO Not Include:", answers: [ "1. strings","2. booleans","3. alerts","4. numbers" ], correctAnswer: "3. alerts" },
-    { question: "The condition in an if/else statement is enclosed with ______.", answers: [ "1. quotes","2. curly brackets","3. parenthesis","4. square brackets" ], correctAnswer: "2. curly brackets" },
-    { question: "Arrays in JavaScript can be used to store", answers: [ "1. numbers and strings","2. other arrays","3. booleans","4. all of the above" ], correctAnswer: "4. all of the above" },
-    { question: "String values must be enclosed within _____ when being assigned to variables.", answers: [ "1. commas","2. curly brackets","3. quotes","4. parenthesis" ], correctAnswer: "3. quotes" },
-    { question: "A very useful tool used during development and debugging for printing content to the debugger is:", answers: [ "1. JavaScript", "2. terminal/bash", "3. for loops", "4. console.log"], correctAnswer: "4. console.log" }
+    // { question: "The condition in an if/else statement is enclosed with ______.", answers: [ "1. quotes","2. curly brackets","3. parenthesis","4. square brackets" ], correctAnswer: "2. curly brackets" },
+    // { question: "Arrays in JavaScript can be used to store", answers: [ "1. numbers and strings","2. other arrays","3. booleans","4. all of the above" ], correctAnswer: "4. all of the above" },
+    // { question: "String values must be enclosed within _____ when being assigned to variables.", answers: [ "1. commas","2. curly brackets","3. quotes","4. parenthesis" ], correctAnswer: "3. quotes" },
+    // { question: "A very useful tool used during development and debugging for printing content to the debugger is:", answers: [ "1. JavaScript", "2. terminal/bash", "3. for loops", "4. console.log"], correctAnswer: "4. console.log" }
 ];
 
 let startQuiz = function() {
@@ -144,17 +144,15 @@ let endQuiz = function() {
     enterScoreBtn.addEventListener("click", function() {
         // High-score entry page goes here
         document.getElementById("finalResults").classList.add("hidden");
-        // document.getElementById("highscore").classList.add("hidden");
         document.getElementById("timer").classList.add("hidden");
         document.getElementById("enterScore").classList.remove("hidden");
 
         // user initials entry
         let scoreNotification = document.createElement('h3');
+        scoreNotification.classList.add('alertUserScore');
         scoreNotification.textContent = "Your score: " + timeLeft + " seconds";
         enterScore.appendChild(scoreNotification);
 
-        // let finalScore = timeLeft;
-        
         // Saves user initials
         saveButton.addEventListener('click', function() {
             // run saveScore function
@@ -164,6 +162,7 @@ let endQuiz = function() {
         // lets try to return users back to main page
         let returnBtn = document.createElement('button');
         returnBtn.classList.add('btn');
+        returnBtn.classList.add('returnBtn');
         returnBtn.textContent = "Return";
         enterScore.appendChild(returnBtn);
         
@@ -203,9 +202,9 @@ let saveScore = function() {
     userInfoArr.splice(5);
 
     // check to see if userDataObj is working correctly, it is.
-    console.log(userDataObj);
+    // console.log(userDataObj);
     // Let's see what's inside the array
-    console.log(userInfoArr);
+    // console.log(userInfoArr);
 
     // update the high scores array
     localStorage.setItem("userInfoArr", JSON.stringify(userInfoArr));
