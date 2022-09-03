@@ -12,7 +12,8 @@ let saveButton = document.querySelector('#save');
 let msgDiv = document.querySelector('#msg');
 
 // This is where our highScores are saved
-let userInfoArr = [];
+// let userInfoArr = [];
+let userInfoArr = JSON.parse(localStorage.getItem('userInfoArr')) || [];
 let totalScores = 5;
 
 // quiz questions array with answer selections and correct answer
@@ -179,16 +180,19 @@ let saveScore = function() {
     let initialsInput = document.querySelector('#initials').value;
     let finalScore = timeLeft;
 
+    // remind users they need to enter their initials
     if (!initialsInput) {
         alert("You need to enter your initials!");
         return false;
     }
 
+    // userDataObj collects the initials and time left and stores them as an object containing name and time.
     let userDataObj = {
         name: initialsInput,
         time: finalScore
     };
 
+    // userDataObj is then pushed into the empty array, userInfoArr
     userInfoArr.push(userDataObj);
 
     // use sort() to flesh out the userInfoArr to pick the highest answer
@@ -206,6 +210,7 @@ let saveScore = function() {
 
     // update the high scores array
     localStorage.setItem("userInfoArr", JSON.stringify(userInfoArr));
+
 }
 
 // create a function that shows high scores from localStorage
