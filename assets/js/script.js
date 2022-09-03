@@ -156,8 +156,8 @@ let endQuiz = function() {
         // let finalScore = timeLeft;
         
         // Saves user initials
-        saveButton.addEventListener('click', function(event) {
-            event.preventDefault();
+        saveButton.addEventListener('click', function() {
+            // event.preventDefault();
             saveScore();
 
             // if(!saveScore()) {
