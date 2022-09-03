@@ -160,9 +160,9 @@ let endQuiz = function() {
             event.preventDefault();
             saveScore();
 
-            if(!saveScore()) {
-                location.reload();
-            }
+            // if(!saveScore()) {
+            //     location.reload();
+            // }
             // save score code was here
         });
 
