@@ -159,6 +159,10 @@ let endQuiz = function() {
         saveButton.addEventListener('click', function(event) {
             event.preventDefault();
             saveScore();
+
+            if(!saveScore()) {
+                location.reload();
+            }
             // save score code was here
         });
 
