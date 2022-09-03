@@ -157,13 +157,8 @@ let endQuiz = function() {
         
         // Saves user initials
         saveButton.addEventListener('click', function() {
-            // event.preventDefault();
+            // run saveScore function
             saveScore();
-
-            // if(!saveScore()) {
-            //     location.reload();
-            // }
-            // save score code was here
         });
 
         // lets try to return users back to main page
