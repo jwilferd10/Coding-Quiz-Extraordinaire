@@ -207,7 +207,10 @@ let saveScore = function() {
     // update the high scores array
     localStorage.setItem("userInfoArr", JSON.stringify(userInfoArr));
 
-}
+    if (saveScore) {
+        window.alert("Your score has successfully been saved!");
+    }
+};
 
 // create a function that shows high scores from localStorage
 let showHighScore = function() {
