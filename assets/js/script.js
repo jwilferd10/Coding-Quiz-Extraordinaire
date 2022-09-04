@@ -11,10 +11,8 @@ let initialsInput = document.querySelector('#initials');
 let saveButton = document.querySelector('#save');
 let msgDiv = document.querySelector('#msg');
 
-// This is where our highScores are saved
-// let userInfoArr = [];
+// highScore storage 
 let userInfoArr = JSON.parse(localStorage.getItem('userInfoArr')) || [];
-let totalScores = 5;
 
 // quiz questions array with answer selections and correct answer
 const testQuestionsArr = [
@@ -145,7 +143,6 @@ let endQuiz = function() {
     enterScoreBtn.addEventListener("click", function() {
         // High-score entry page goes here
         document.getElementById("finalResults").classList.add("hidden");
-        // document.getElementById("timer").classList.add("hidden");
         document.getElementById("enterScore").classList.remove("hidden");
 
         // user initials entry
