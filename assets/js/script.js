@@ -113,8 +113,9 @@ let hideProgress = function() {
 let endQuiz = function() {
     // conceal the quiz when finished & show the results
     document.getElementById("quiz").classList.add("hidden");
+    document.getElementById("timer").classList.add("hidden");
     document.getElementById("finalResults").classList.remove("hidden");
-
+    
     let h2Element = document.createElement('h2');
     h2Element.textContent = "All done! Let's check your time:";
     scoreEl.appendChild(h2Element);
@@ -144,7 +145,7 @@ let endQuiz = function() {
     enterScoreBtn.addEventListener("click", function() {
         // High-score entry page goes here
         document.getElementById("finalResults").classList.add("hidden");
-        document.getElementById("timer").classList.add("hidden");
+        // document.getElementById("timer").classList.add("hidden");
         document.getElementById("enterScore").classList.remove("hidden");
 
         // user initials entry
