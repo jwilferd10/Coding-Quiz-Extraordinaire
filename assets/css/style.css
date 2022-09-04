@@ -120,6 +120,32 @@ header h1 {
     top: 15rem;
 }
 
+.initialsBox{
+    background-color: transparent;
+    height: 1.8rem;
+    width: 10rem;
+    padding-left: 2.5px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    font-size: large;
+    border-color: white;
+    border-radius: 5px;
+    color: white;
+}
+
+.submitbtn {
+    width: 6rem;
+    color: white;
+    background-color: transparent;
+    cursor: pointer;
+    border: solid 2px white;
+    border-radius: 5px;
+    height: 2.5rem;
+    font-size: 1.2rem;
+    display: inline-block;
+    box-shadow: 10px 10px 10px rgb(0 0 0 / 50%);
+}
+
 .returnBtn {
     position: relative;
     top: 15rem;

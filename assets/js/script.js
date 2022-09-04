@@ -196,7 +196,7 @@ let saveScore = function() {
         return b.time - a.time;
     })
     
-    // at index 5 remove anything after
+    // remove anything after index 5
     userInfoArr.splice(5);
 
     // check to see if userDataObj is working correctly, it is.
