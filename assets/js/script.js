@@ -74,8 +74,7 @@ let quizQuestions = function() {
         answerBtn.addEventListener("click", function(event) {
             iterateQuestion();
         })
-    }
-    
+    }    
 };
 
 // connected to the answer buttons generated in the above code
@@ -115,6 +114,7 @@ let endQuiz = function() {
     document.getElementById("timer").classList.add("hidden");
     document.getElementById("finalResults").classList.remove("hidden");
     
+    // if users have <= 0 time left, give them game over screen
     if(timeLeft <= 0) {
         let h2Element = document.createElement('h2');
         h2Element.textContent = "😭 "+ " Better luck next time... " + "😭";
