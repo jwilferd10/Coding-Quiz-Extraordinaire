@@ -6,6 +6,7 @@ let highScoresListEl = document.getElementById("highScoresList");
 let timerEl = document.getElementById("timer");
 let timeLeft = 60;
 let questionNumber = -1; // questions will start at -1, using 0 will skip a question
+let progressEl = document.getElementsByClassName("progress") [0]
 
 let initialsInput = document.querySelector('#initials');
 let saveButton = document.querySelector('#save');
@@ -78,10 +79,8 @@ let quizQuestions = function() {
 };
 
 // connected to the answer buttons generated in the above code
-// answerEl.addEventListener("click", function(event) {
 let iterateQuestion = function() {
     // when the button is clicked this furthers users progress
-    let progressEl = document.getElementsByClassName("progress") [0]
 
     if (answer === event.target.textContent) {
         // Let user know answer is correct
@@ -91,7 +90,7 @@ let iterateQuestion = function() {
     }
     else { 
         // Let user know answer is incorrect
-        progressEl.textContent = "Incorrect Answer!";
+        progressEl.textContent = "Incorrect Answer!";;
         setTimeout(hideProgress, 3000);
         timeLeft = timeLeft - 10;
         showProgress();
@@ -102,13 +101,11 @@ let iterateQuestion = function() {
 
 // showProgress displays notification whether answer is right or wrong
 let showProgress = function() {
-    let progressEl = document.getElementsByClassName("progress") [0]
     progressEl.removeAttribute("style");
 };
 
 // hideProgress removes the notification after a set amount of time
 let hideProgress = function() {
-    let progressEl = document.getElementsByClassName("progress") [0]
     progressEl.style.display="none";
 };
 
