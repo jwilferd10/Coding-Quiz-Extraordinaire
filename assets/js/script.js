@@ -4,7 +4,7 @@ let answerEl = document.getElementById("answers");
 let scoreEl = document.getElementById("finalResults");
 let highScoresListEl = document.getElementById("highScoresList");
 let timerEl = document.getElementById("timer");
-let timeLeft = 30;
+let timeLeft = 60;
 let questionNumber = -1; // questions will start at -1, using 0 will skip a question
 let progressEl = document.getElementsByClassName("progress") [0]
 
