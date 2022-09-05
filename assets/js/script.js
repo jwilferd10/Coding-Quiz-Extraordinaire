@@ -4,7 +4,7 @@ let answerEl = document.getElementById("answers");
 let scoreEl = document.getElementById("finalResults");
 let highScoresListEl = document.getElementById("highScoresList");
 let timerEl = document.getElementById("timer");
-let timeLeft = 60;
+let timeLeft = 30;
 let questionNumber = -1; // questions will start at -1, using 0 will skip a question
 let progressEl = document.getElementsByClassName("progress") [0]
 
@@ -42,7 +42,7 @@ let startTimer = function() {
 
         timerEl.textContent = "Time: " + timeLeft + " seconds remaining";
 
-        if (timeLeft === 0 || questionNumber === testQuestionsArr.length) {
+        if (timeLeft <= 0 || questionNumber === testQuestionsArr.length) {
             clearInterval(timer);
             setTimeout(endQuiz, 200);
         }
@@ -81,7 +81,6 @@ let quizQuestions = function() {
 // connected to the answer buttons generated in the above code
 let iterateQuestion = function() {
     // when the button is clicked this furthers users progress
-
     if (answer === event.target.textContent) {
         // Let user know answer is correct
         progressEl.textContent = "Correct Answer!"
@@ -116,61 +115,81 @@ let endQuiz = function() {
     document.getElementById("timer").classList.add("hidden");
     document.getElementById("finalResults").classList.remove("hidden");
     
-    let h2Element = document.createElement('h2');
-    h2Element.textContent = "All done! Let's check your time:";
-    scoreEl.appendChild(h2Element);
+    if(timeLeft <= 0) {
+        let h2Element = document.createElement('h2');
+        h2Element.textContent = "😭 "+ " Better luck next time... " + "😭";
+        scoreEl.appendChild(h2Element);
 
-    // show user final score
-    let scoreInfo = document.createElement('section');
-    scoreInfo.textContent = "Your final score is " + timeLeft + " seconds";
-    scoreEl.appendChild(scoreInfo);
+        let scoreInfo = document.createElement('section');
+        scoreInfo.textContent = "Your score: " + timeLeft;
+        scoreEl.appendChild(scoreInfo);
 
-    // bring user back to main page
-    let mainPageBtn = document.createElement('button');
-    mainPageBtn.classList.add('btn');
-    mainPageBtn.textContent = "Back To Main Page"
-    scoreEl.appendChild(mainPageBtn);
+        let backBtn = document.createElement('button');
+        backBtn.classList.add('btn');
+        backBtn.textContent = "Back";
+        scoreEl.appendChild(backBtn);
 
-    // reloads the entire page, resetting the time and the question in the process
-    mainPageBtn.addEventListener("click", function() {
-        location.reload();
-    })
-
-    // high-score entry page 
-    let enterScoreBtn = document.createElement('button');
-    enterScoreBtn.classList.add('btn');
-    enterScoreBtn.textContent = "Enter My Score"
-    scoreEl.appendChild(enterScoreBtn);
-
-    enterScoreBtn.addEventListener("click", function() {
-        // High-score entry page goes here
-        document.getElementById("finalResults").classList.add("hidden");
-        document.getElementById("enterScore").classList.remove("hidden");
-
-        // user initials entry
-        let scoreNotification = document.createElement('h3');
-        scoreNotification.classList.add('alertUserScore');
-        scoreNotification.textContent = "Your score: " + timeLeft + " seconds";
-        enterScore.appendChild(scoreNotification);
-
-        // Saves user initials
-        saveButton.addEventListener('click', function() {
-            // run saveScore function
-            saveScore();
-        });
-
-        // lets try to return users back to main page
-        let returnBtn = document.createElement('button');
-        returnBtn.classList.add('btn');
-        returnBtn.classList.add('returnBtn');
-        returnBtn.textContent = "Return";
-        enterScore.appendChild(returnBtn);
-        
-        // reloads the entire page, resetting the time and the question in the process
-        returnBtn.addEventListener("click", function() {
+        backBtn.addEventListener("click", function() {
             location.reload();
         })
-    })
+
+    } else {
+        let h2Element = document.createElement('h2');
+        h2Element.textContent = "All done! Let's check your time:";
+        scoreEl.appendChild(h2Element);
+
+        // show user final score
+        let scoreInfo = document.createElement('section');
+        scoreInfo.textContent = "Your final score is " + timeLeft + " seconds";
+        scoreEl.appendChild(scoreInfo);
+
+        // bring user back to main page
+        let mainPageBtn = document.createElement('button');
+        mainPageBtn.classList.add('btn');
+        mainPageBtn.textContent = "Back To Main Page"
+        scoreEl.appendChild(mainPageBtn);
+
+        // reloads the entire page, resetting the time and the question in the process
+        mainPageBtn.addEventListener("click", function() {
+            location.reload();
+        })
+
+        // high-score entry page 
+        let enterScoreBtn = document.createElement('button');
+        enterScoreBtn.classList.add('btn');
+        enterScoreBtn.textContent = "Enter My Score"
+        scoreEl.appendChild(enterScoreBtn);
+
+        enterScoreBtn.addEventListener("click", function() {
+            // High-score entry page goes here
+            document.getElementById("finalResults").classList.add("hidden");
+            document.getElementById("enterScore").classList.remove("hidden");
+
+            // user initials entry
+            let scoreNotification = document.createElement('h3');
+            scoreNotification.classList.add('alertUserScore');
+            scoreNotification.textContent = "Your score: " + timeLeft + " seconds";
+            enterScore.appendChild(scoreNotification);
+
+            // Saves user initials
+            saveButton.addEventListener('click', function() {
+                // run saveScore function
+                saveScore();
+            });
+
+            // lets try to return users back to main page
+            let returnBtn = document.createElement('button');
+            returnBtn.classList.add('btn');
+            returnBtn.classList.add('returnBtn');
+            returnBtn.textContent = "Return";
+            enterScore.appendChild(returnBtn);
+        
+            // reloads the entire page, resetting the time and the question in the process
+            returnBtn.addEventListener("click", function() {
+                location.reload();
+            })
+        })
+    }
 };
 
 let saveScore = function() {
