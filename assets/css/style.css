@@ -81,11 +81,6 @@ header h1 {
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
 }
 
-#start-btn span:hover {
-    filter: blur(4px);
-    transition: 0.7s;
-}
-
 #start-btn:active {
     box-shadow: 10px 10px 10px #000;
     transform: translateY(4px);
@@ -115,6 +110,7 @@ header h1 {
 }
 
 .potentialAnswer:active {
+    animation: stop;
     box-shadow: 10px 10px 10px #000;
     transform: translateY(4px);
 }
@@ -187,6 +183,7 @@ header h1 {
 }
 
 .btn:active {
+    animation: stop;
     box-shadow: 10px 10px 10px #000;
     transform: translateY(4px);
 }
