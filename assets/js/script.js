@@ -1,19 +1,17 @@
-// When the quiz is over, there is an error at at around line 46 (this is possibly because there's nothing left within the array)
 let questionEl = document.getElementById("question");
-let answerEl = document.getElementById("answers");
+let potentialAnswersEl = document.getElementById("potentialAnswers");
 let scoreEl = document.getElementById("finalResults");
 let highScoresListEl = document.getElementById("highScoresList");
 let timerEl = document.getElementById("timer");
-let timeLeft = 60;
-let questionNumber = -1; // questions will start at -1, using 0 will skip a question
-let progressEl = document.getElementsByClassName("progress") [0]
-
 let initialsInput = document.querySelector('#initials');
 let saveButton = document.querySelector('#save');
 let msgDiv = document.querySelector('#msg');
 
-// highScore storage 
+let progressEl = document.getElementsByClassName("progress") [0]
 let userInfoArr = JSON.parse(localStorage.getItem('userInfoArr')) || [];
+
+let timeLeft = 60;
+let questionNumber = -1; // questions will start at -1, using 0 will skip a question
 
 // quiz questions array with answer selections and correct answer
 const testQuestionsArr = [
@@ -55,26 +53,26 @@ let quizQuestions = function() {
 
     // questionEl takes the textContent from questionNumber and displays the current question from the array
     questionEl.textContent = testQuestionsArr[questionNumber].question
-    
-    // as users progress onto the next question, this removes the last questions answers and allows the next batch of answers to appear.
-    answerEl.innerHTML = "";
+     
+    generateBtns();
+};
 
-    // This displays our list of possible answers
-    let answers = testQuestionsArr[questionNumber].answers;
-
-    // This reaches for our correctAnswer in the array
+let generateBtns = function () {
+    // potentialAnswersEl is an empty string & Then answersObj displays our list of possible answers from the array of objects & then reaches for our correctAnswer in the array
+    potentialAnswersEl.innerHTML = "";
+    let answersObj = testQuestionsArr[questionNumber].answers;
     answer = testQuestionsArr[questionNumber].correctAnswer;
-
+    
     // display the array of possible answers
-    for (let i = 0; i < answers.length; i++) {
+    for (let i = 0; i < answersObj.length; i++) {
         let answerChoices = document.createElement("button");
         answerChoices.className = "potentialAnswer";
-        answerChoices.textContent = answers[i];
-        answerBtn = answerEl.appendChild(answerChoices);
+        answerChoices.textContent = answersObj[i];
+        answerBtn = potentialAnswersEl.appendChild(answerChoices);
         answerBtn.addEventListener("click", function(event) {
             iterateQuestion();
         })
-    }    
+    } ;  
 };
 
 // connected to the answer buttons generated in the above code
@@ -220,11 +218,6 @@ let saveScore = function() {
     // remove anything after index 5
     userInfoArr.splice(5);
 
-    // check to see if userDataObj is working correctly, it is.
-    // console.log(userDataObj);
-    // Let's see what's inside the array
-    // console.log(userInfoArr);
-
     // update the high scores array
     localStorage.setItem("userInfoArr", JSON.stringify(userInfoArr));
 
@@ -256,9 +249,6 @@ let showHighScore = function() {
         listElement.innerHTML = highScores[i].name + " - " + highScores[i].time;
         highScoresListEl.appendChild(listElement);
     }
-
-    // make sure the scores are being recognized.
-    // console.log(highScores);
 
     // add an event listener to take users home
     let homeBtnEl = document.getElementById("homebtn")
