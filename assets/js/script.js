@@ -171,9 +171,11 @@ let endQuiz = function() {
             enterScore.appendChild(scoreNotification);
 
             // Saves user initials
-            saveButtonEl.addEventListener('click', function() {
+            saveButtonEl.addEventListener('click', function(event) {
                 // run saveScore function
                 saveScore();
+                event.preventDefault();
+                location.reload();
             });
 
             // lets try to return users back to main page
