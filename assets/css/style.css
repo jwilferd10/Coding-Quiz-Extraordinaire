@@ -132,7 +132,9 @@ header h1 {
     font-family: "Audiowide", sans-serif;
     border-color: white;
     border-radius: 5px;
+    border-style: double;
     color: white;
+    
     box-shadow: 10px 10px 10px rgb(0 0 0 / 50%);
 }
 
