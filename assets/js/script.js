@@ -175,7 +175,6 @@ let endQuiz = function() {
                 // run saveScore function
                 saveScore();
                 event.preventDefault();
-                location.reload();
             });
 
             // lets try to return users back to main page
