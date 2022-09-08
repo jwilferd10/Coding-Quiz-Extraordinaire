@@ -174,7 +174,7 @@ let endQuiz = function() {
             saveButtonEl.addEventListener('click', function(event) {
                 // run saveScore function
                 saveScore();
-                // event.preventDefault();
+                event.preventDefault();
             });
 
             // lets try to return users back to main page
