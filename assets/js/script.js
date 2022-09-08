@@ -184,6 +184,22 @@ let scoreRegistration = function() {
         // run saveScore function
         saveScore();
         event.preventDefault();
+        document.getElementById("enterScore").classList.add("hidden");
+        document.getElementById('savedScore').classList.remove("hidden");
+        let enteredInfo = document.createElement('h1');
+        enteredInfo.classList.add('alertUserScore');
+        enteredInfo.textContent = document.querySelector('#initials').value + ' - ' + timeLeft;
+        savedScore.appendChild(enteredInfo);
+
+        let returnBtn = document.createElement('button');
+        returnBtn.classList.add('btn');
+        returnBtn.classList.add('returnBtn');
+        returnBtn.textContent = "Return";
+        savedScore.appendChild(returnBtn);
+
+        returnBtn.addEventListener("click", function() {
+            location.reload();
+        })
     });
 
     // lets try to return users back to main page
