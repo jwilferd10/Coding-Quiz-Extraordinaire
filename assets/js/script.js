@@ -174,6 +174,7 @@ let endQuiz = function() {
             saveButton.addEventListener('click', function() {
                 // run saveScore function
                 saveScore();
+                location.reload();
             });
 
             // lets try to return users back to main page
