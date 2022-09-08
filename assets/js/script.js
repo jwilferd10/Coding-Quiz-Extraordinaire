@@ -55,10 +55,10 @@ let quizQuestions = function() {
     // questionEl takes the textContent from questionNumber and displays the current question from the array
     questionEl.textContent = testQuestionsArr[questionNumber].question
      
-    generateBtns();
+    generateAnswerBtns();
 };
 
-let generateBtns = function () {
+let generateAnswerBtns = function () {
     // potentialAnswersEl is an empty string & Then answersObj displays our list of possible answers from the array of objects & then reaches for our correctAnswer in the array
     potentialAnswersEl.innerHTML = "";
     let answersObj = testQuestionsArr[questionNumber].answers;
@@ -276,6 +276,8 @@ let showHighScore = function() {
         highScoresListEl.appendChild(listElement);
     }
 };
+
+//
 
 // add an event listener to take users home
 homeBtnEl.addEventListener("click", function() {
