@@ -174,7 +174,7 @@ let endQuiz = function() {
             saveButtonEl.addEventListener('click', function(event) {
                 // run saveScore function
                 saveScore();
-                event.preventDefault();
+                // event.preventDefault();
             });
 
             // lets try to return users back to main page
@@ -225,7 +225,6 @@ let saveScore = function() {
 
     if (saveScore) {
         window.alert("Your score has successfully been saved!");
-        location.reload();
     }
 };
 
