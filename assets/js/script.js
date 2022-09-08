@@ -225,6 +225,7 @@ let saveScore = function() {
 
     if (saveScore) {
         window.alert("Your score has successfully been saved!");
+        location.reload();
     }
 };
 
