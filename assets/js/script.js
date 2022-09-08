@@ -6,6 +6,7 @@ let timerEl = document.getElementById("timer");
 let initialsInput = document.querySelector('#initials');
 let saveButton = document.querySelector('#save');
 let msgDiv = document.querySelector('#msg');
+let homeBtnEl = document.getElementById("homebtn")
 
 let progressEl = document.getElementsByClassName("progress") [0]
 let userInfoArr = JSON.parse(localStorage.getItem('userInfoArr')) || [];
@@ -249,13 +250,12 @@ let showHighScore = function() {
         listElement.innerHTML = highScores[i].name + " - " + highScores[i].time;
         highScoresListEl.appendChild(listElement);
     }
-
-    // add an event listener to take users home
-    let homeBtnEl = document.getElementById("homebtn")
-    homeBtnEl.addEventListener("click", function() {
-        location.reload();
-    })
 };
+
+// add an event listener to take users home
+homeBtnEl.addEventListener("click", function() {
+    location.reload();
+});
 
 document.querySelector("#start-btn").addEventListener("click", startQuiz);
 document.querySelector("#highscore").addEventListener("click", showHighScore)
