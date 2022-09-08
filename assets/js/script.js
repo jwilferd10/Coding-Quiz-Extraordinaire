@@ -4,7 +4,7 @@ let scoreEl = document.getElementById("finalResults");
 let highScoresListEl = document.getElementById("highScoresList");
 let timerEl = document.getElementById("timer");
 let initialsInput = document.querySelector('#initials');
-let saveButton = document.querySelector('#save');
+let saveButtonEl = document.getElementById('save');
 let msgDiv = document.querySelector('#msg');
 let homeBtnEl = document.getElementById("homebtn")
 
@@ -171,10 +171,9 @@ let endQuiz = function() {
             enterScore.appendChild(scoreNotification);
 
             // Saves user initials
-            saveButton.addEventListener('click', function() {
+            saveButtonEl.addEventListener('click', function() {
                 // run saveScore function
                 saveScore();
-                reload();
             });
 
             // lets try to return users back to main page
