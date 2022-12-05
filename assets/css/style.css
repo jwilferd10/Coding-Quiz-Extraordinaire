@@ -118,7 +118,8 @@ header h1 {
 
 .initialContainer {
     position: relative;
-    top: 16.5rem;
+    top: 6.5rem;
+    right: 0.5rem;
 }
 
 .initialsBox{
@@ -155,12 +156,14 @@ header h1 {
 
 .returnBtn {
     position: relative;
-    top: 17.5rem;
+    top: 7.5rem; 
+    left: 0.1rem;
 }
 
 .alertUserScore {
     position: relative;
-    top: 10rem;
+    top: 0rem;
+    left: 0.5rem;
 }
 
 .btn {
@@ -310,7 +313,12 @@ header h1 {
     }
 
     .userOptions {
-        margin-top: 0%   
+        margin-top: 0%; 
+        margin-bottom: -17%;
+    }
+
+    .start-quiz {
+        padding-bottom: 13%;
     }
 
     .optionsText {
@@ -321,9 +329,14 @@ header h1 {
         padding-bottom: 25%;
     }
 
+    .enterScore {
+        padding-bottom: 100%
+    }
+
     .footerSection {
         padding: 60px;
         padding-bottom: 10px;
+        padding-top: 50%;
     }
 
     #footerImg {
@@ -343,15 +356,29 @@ header h1 {
     }
 }
 
+@media (max-width: 650px) {
+    .footerSection {
+        padding-top: 50%;
+    }
+}
+
 @media (max-width: 548px) {
     .intro ol {
-        padding: 7% 22%
+        padding: 7% 22%;
+    }
+
+    .start-quiz {
+        padding-bottom: 19%;
     }
 }
 
 @media (max-width: 362px) {
     .failedQuizStyle {
         font-size: 110%
+    }
+
+    .start-quiz {
+        padding-bottom: 45%;
     }
 }
 
