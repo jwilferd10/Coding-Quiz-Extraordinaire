@@ -275,3 +275,29 @@ footer p {
     90% { transform: translate(1px, 2px) rotate(0deg); }
     100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
+
+/* Media Queries */
+@media (max-width: 350px) {
+    .letsAddSpace {
+        padding: 0px;
+    }
+    
+    .container {
+        padding: 0px;
+    }
+
+    .intro ol {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 60px;
+        margin-top: -50px
+    }
+
+    .userOptions {
+        margin-top: -15%   
+    }
+
+    .optionsText {
+        padding: 12px;
+    }
+}
