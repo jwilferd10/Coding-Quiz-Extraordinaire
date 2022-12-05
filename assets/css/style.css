@@ -317,10 +317,6 @@ header h1 {
         margin-bottom: -17%;
     }
 
-    .start-quiz {
-        padding-bottom: 13%;
-    }
-
     .optionsText {
         padding: 12px;
     }
@@ -330,13 +326,14 @@ header h1 {
     }
 
     .enterScore {
-        padding-bottom: 100%
+        padding-bottom: 25%;
+        margin-top: -10%;
     }
 
     .footerSection {
         padding: 60px;
         padding-bottom: 10px;
-        padding-top: 50%;
+        padding-top: 30%;
     }
 
     #footerImg {
@@ -358,7 +355,7 @@ header h1 {
 
 @media (max-width: 650px) {
     .footerSection {
-        padding-top: 50%;
+        padding-top: 35%;
     }
 }
 
@@ -379,6 +376,11 @@ header h1 {
     .returnBtn {
         top: 18.5rem;
     }
+
+    .enterScore {
+        padding-bottom: 50%;
+        margin-top: -30%;
+    }
 }
 
 @media (max-width: 548px) {
@@ -389,17 +391,42 @@ header h1 {
     .start-quiz {
         padding-bottom: 19%;
     }
+
+    .footerSection {
+        padding-top: 40%;
+    }
+
+    .enterScore {
+        padding-bottom: 45%;
+    } 
 }
 
-@media (max-width: 527px) {
+@media (max-width: 528px) {
     .submitbtn {
         top: 1.5rem;
+    }
+
+    .enterScore {
+        padding-bottom: 50%;
+        margin-top: -40%;
     }
 }
 
 @media (max-width: 426px) {
     .submitbtn {
         top: 0.2rem;
+    }
+
+    #savedScore{
+        padding-bottom: 34%;
+    }
+
+    #scoreSectionID {
+        padding-bottom: 2%;
+    }
+
+    .enterScore {
+        padding-bottom: 54%;
     }
 }
 
@@ -421,17 +448,17 @@ header h1 {
     .submitbtn {
         top: 1.5rem;
     }
+
+    #scoreSectionID {
+        padding-bottom: 5%;
+        padding: 0%;
+    }
+
+    .enterScore {
+        padding-bottom: 73%;
+        margin-top: -50%;
+    }
 }
-
-/* @media (max-width: 362px) {
-    .failedQuizStyle {
-        font-size: 110%
-    }
-
-    .start-quiz {
-        padding-bottom: 45%;
-    }
-} */
 
 @media (max-width: 363px) {
     .failedQuizStyle {
@@ -446,6 +473,18 @@ header h1 {
         font-size: 1rem;
     }
 
+    #savedScore {
+        padding-bottom: 50%;
+    }
+
+    #scoreSectionID {
+        padding-bottom: 10%;
+    }
+
+    .enterScore {
+        padding-bottom: 96%;
+        margin-top: -67%;
+    }
 }
 
 @media (max-width: 350px) {
@@ -464,6 +503,10 @@ header h1 {
     .initialsBox {
         margin-left: 0rem;
     }
+
+    #scoreSectionID {
+        padding-bottom: 15%;
+    }
 }
 
 @media (max-width: 328px) {
@@ -476,8 +519,8 @@ header h1 {
     }
 
     .initialsBox {
-        width: 13rem;
-        padding-left: 10%;
+        width: 15rem;
+        padding-left: 15%;
     }
 
     .submitbtn {
@@ -486,5 +529,13 @@ header h1 {
 
     .returnBtn {
         right: 0.5rem;
+    }
+
+    #savedScore {
+        padding-bottom: 61%;
+    }
+
+    #scoreSectionID {
+        padding-bottom: 20%;
     }
 }
