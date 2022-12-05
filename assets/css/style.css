@@ -194,6 +194,7 @@ header h1 {
 
 .enterScore {
     position: relative;
+    text-align: center;
 }
 
 #scoreHeader {
@@ -316,6 +317,10 @@ header h1 {
         padding: 12px;
     }
 
+    #finalResults {
+        padding-bottom: 25%;
+    }
+
     .footerSection {
         padding: 60px;
         padding-bottom: 10px;
@@ -341,6 +346,12 @@ header h1 {
 @media (max-width: 548px) {
     .intro ol {
         padding: 7% 22%
+    }
+}
+
+@media (max-width: 362px) {
+    .failedQuizStyle {
+        font-size: 110%
     }
 }
 

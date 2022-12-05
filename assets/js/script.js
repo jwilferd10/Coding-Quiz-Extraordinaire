@@ -116,6 +116,7 @@ let endQuiz = function() {
     // if users have <= 0 time left, give them game over screen
     if(timeLeft <= 0) {
         let h2Element = document.createElement('h2');
+        h2Element.classList.add('failedQuizStyle')
         h2Element.textContent = "😭 "+ " Better luck next time... " + "😭";
         scoreEl.appendChild(h2Element);
 
