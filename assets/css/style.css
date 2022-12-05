@@ -286,11 +286,26 @@ header h1 {
         padding: 0px;
     }
 
+    .headerEmoji {
+        display: none;
+    }
+
+    #topBox {
+        float: none;
+        padding-right: initial;
+        padding-left: unset;
+    }
+
+    .counter {
+        text-align: center;
+    }
+
     .intro ol {
         display: flex;
         flex-wrap: wrap;
         padding: 60px;
-        margin-top: -50px
+        margin-top: -50px;
+        text-align: center;
     }
 
     .userOptions {
