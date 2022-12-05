@@ -219,7 +219,7 @@ header h1 {
 }
 
 /* footer style */
-footer {
+.footerWrapper {
     position: fixed;
     padding: 20px 35px;
     left: 0;
@@ -229,7 +229,7 @@ footer {
     text-align: left; 
 }
 
-footer p {
+.footerText {
     position: absolute;
     bottom: 30px;
     padding-left: 3px;
@@ -299,5 +299,26 @@ footer p {
 
     .optionsText {
         padding: 12px;
+    }
+
+    .footerSection {
+        padding: 60px;
+        padding-bottom: 10px;
+    }
+
+    #footerImg {
+        position: relative;
+        padding: 0px 35px;
+    }
+    
+    .footerWrapper {
+        position: unset;
+        padding: 0px 35px
+    }
+
+    .footerText {
+        position: unset;
+        padding-left: 0px;
+        text-align: center;
     }
 }
