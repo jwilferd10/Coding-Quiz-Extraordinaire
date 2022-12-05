@@ -277,7 +277,7 @@ header h1 {
 }
 
 /* Media Queries */
-@media (max-width: 350px) {
+@media (max-width: 746px) {
     .letsAddSpace {
         padding: 0px;
     }
@@ -303,13 +303,13 @@ header h1 {
     .intro ol {
         display: flex;
         flex-wrap: wrap;
-        padding: 60px;
-        margin-top: -50px;
-        text-align: center;
+        padding: 7% 35%;
+        text-align: unset; 
+        padding-bottom: 25px
     }
 
     .userOptions {
-        margin-top: -15%   
+        margin-top: 0%   
     }
 
     .optionsText {
@@ -335,5 +335,25 @@ header h1 {
         position: unset;
         padding-left: 0px;
         text-align: center;
+    }
+}
+
+@media (max-width: 548px) {
+    .intro ol {
+        padding: 7% 22%
+    }
+}
+
+@media (max-width: 350px) {
+    .intro ol {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 60px;
+        margin-top: -50px;
+        text-align: center;
+    }
+
+    .userOptions {
+        margin-top: -15%   
     }
 }
