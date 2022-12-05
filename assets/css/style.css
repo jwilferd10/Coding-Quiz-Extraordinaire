@@ -362,6 +362,25 @@ header h1 {
     }
 }
 
+@media (max-width: 570px) {
+    .alertUserScore {
+        top: 8rem;
+    }
+    
+    .initialContainer {
+        top: 15.5rem;
+    }
+    
+    .submitbtn {
+        left: 0.5rem;
+        top: 0rem;
+    }
+    
+    .returnBtn {
+        top: 18.5rem;
+    }
+}
+
 @media (max-width: 548px) {
     .intro ol {
         padding: 7% 22%;
@@ -372,7 +391,39 @@ header h1 {
     }
 }
 
-@media (max-width: 362px) {
+@media (max-width: 527px) {
+    .submitbtn {
+        top: 1.5rem;
+    }
+}
+
+@media (max-width: 426px) {
+    .submitbtn {
+        top: 0.2rem;
+    }
+}
+
+@media (max-width: 404px) {
+    .initialContainer {
+        top: 16.5rem; 
+    }
+
+    .initialsHeader {
+        margin-left: 1rem;
+    }
+
+    .initialsBox {
+        width: 15rem;
+        padding-left: 14%;
+        margin-left: 1rem;
+    }
+
+    .submitbtn {
+        top: 1.5rem;
+    }
+}
+
+/* @media (max-width: 362px) {
     .failedQuizStyle {
         font-size: 110%
     }
@@ -380,6 +431,21 @@ header h1 {
     .start-quiz {
         padding-bottom: 45%;
     }
+} */
+
+@media (max-width: 363px) {
+    .failedQuizStyle {
+        font-size: 110%
+    }
+
+    .start-quiz {
+        padding-bottom: 45%;
+    }
+    
+    .alertUserScore {
+        font-size: 1rem;
+    }
+
 }
 
 @media (max-width: 350px) {
@@ -393,5 +459,32 @@ header h1 {
 
     .userOptions {
         margin-top: -15%   
+    }
+
+    .initialsBox {
+        margin-left: 0rem;
+    }
+}
+
+@media (max-width: 328px) {
+    .alertUserScore {
+        font-size: 86%;
+    }
+
+    .initialsHeader {
+        margin-left: 2rem;
+    }
+
+    .initialsBox {
+        width: 13rem;
+        padding-left: 10%;
+    }
+
+    .submitbtn {
+        margin-left: 1rem;
+    }
+
+    .returnBtn {
+        right: 0.5rem;
     }
 }
