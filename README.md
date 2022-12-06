@@ -13,6 +13,11 @@
   - [Contact Information](#e-mail-contact-information)
 
 ## :camera: Preview:
+<p float="left">
+  <img src= "assets/img/CodingQuizDesktop.png") />
+  <img src= "assets/img/CodingQuizMobile.png" width="20%") />
+</p>
+
 ![image](assets/img/demo.gif)
 
 ## :wave: Description: 
