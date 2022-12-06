@@ -16,7 +16,8 @@
 ![image](assets/img/demo.gif)
 
 ## :wave: Description: 
-<p> Hello there! The Coding Quiz Extraordinaire is a timed quiz utilizing dynamically generated HTML via JavaScript to alternate through questions and content. Also featured is a fun and peppy CSS design. Users have sixty seconds on the clock to answer multiple questions, incorrect answers will result in a ten second penalty. The amount of time left is your final score, enjoy yourselves!
+<p> 
+The Coding Quiz Extraordinaire is a timed quiz utilizing dynamically generated HTML via JavaScript to alternate through questions and content. Users have sixty seconds on the clock to answer multiple questions, incorrect answers will result in a ten second penalty. If the timer reaches zero the quiz is over otherwise the amount of time left is your final score. Users can then choose to enter their score to a leaderboard and compare how well they did. The final score and entered initials are both saved to localStorage. Enjoy yourselves and happy coding!
 </p>
   
 ## :book: User Story:
