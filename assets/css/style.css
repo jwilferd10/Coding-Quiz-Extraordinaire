@@ -399,6 +399,11 @@ header h1 {
     .enterScore {
         padding-bottom: 45%;
     } 
+
+    #savedScore {
+        padding: 0px;
+        padding-bottom: 92%;
+    }
 }
 
 @media (max-width: 528px) {
