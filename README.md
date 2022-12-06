@@ -48,11 +48,13 @@ Main Resources:
 - You can do this by clicking the *GREEN* button above and you can download it by ZIP or copy the SSH!
 ### Usage:
 - Click "Start"
-- Select choice of answer for each question
+- Select answer for each question
 - For every CORRECT answer, iterate to next question
 - For every INCORRECT answer, iterate to next question with -10 to the time
-- Final score varies
-- View High Scores showcases other users or self-progression 
+- Time left is the final score
+- Return to main menu or log score
+- To log score, enter initials.
+- View High Scores showcases a list of the top five scores 
 
 ## :e-mail: Contact Information:
 - ### [jwilferd10](https://github.com/jwilferd10)
