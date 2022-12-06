@@ -21,6 +21,7 @@
 
 ## :movie_camera: Demo:
 ![image](assets/img/demo.gif)
+![image](assets/img/QuizMobile450.gif)
 
 ## :wave: Description: 
 <p> 
