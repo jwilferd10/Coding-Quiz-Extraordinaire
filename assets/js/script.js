@@ -1,3 +1,4 @@
+// Global querySelectors
 const questionEl = document.querySelector("#question");
 const potentialAnswersEl = document.querySelector("#potentialAnswers");
 const scoreEl = document.querySelector("#finalResults");
@@ -7,12 +8,15 @@ const initialsInput = document.querySelector('#initials');
 const saveButtonEl = document.querySelector('#save');
 const msgDiv = document.querySelector('#msg');
 const homeBtnEl = document.querySelector("#homebtn");
-
 const progressEl = document.querySelector(".progress");
-const userInfoArr = JSON.parse(localStorage.getItem('userInfoArr')) || [];
 
+// Global quiz variables
 let timeLeft = 60;
-let questionNumber = 0; // questions will start at -1, using 0 will skip a question
+let questionNumber = 0;
+let quizEnded = false;
+
+// localStorage 
+const userInfoArr = JSON.parse(localStorage.getItem('userInfoArr')) || [];
 
 // quiz questions array with answer selections and correct answer
 const testQuestionsArr = [
@@ -23,7 +27,7 @@ const testQuestionsArr = [
     { question: "A very useful tool used during development and debugging for printing content to the debugger is:", answers: [ "1. JavaScript", "2. terminal/bash", "3. for loops", "4. console.log"], correctAnswer: "4. console.log" }
 ];
 
-let startQuiz = () => {
+const startQuiz = () => {
     // When the quiz is started, hide the intro and display the quiz to users
     document.getElementById("intro").classList.add("hidden");  
     document.getElementById("quiz").classList.remove("hidden");
@@ -34,16 +38,18 @@ let startQuiz = () => {
     quizQuestions();
 };
 
-let startTimer = () => {
-    let timer = setInterval(function() {
-        // decrement timeLeft
+const startTimer = () => {
+    const timer = setInterval(() => {
         timeLeft --;
-
         timerEl.textContent = "Time: " + timeLeft + " seconds remaining";
 
         if (timeLeft <= 0 || questionNumber === testQuestionsArr.length) {
             clearInterval(timer);
-            setTimeout(endQuiz, 200);
+            if (!quizEnded) {
+                endQuiz();
+                // Set quizEnded to true to prevent repeated endQuiz calls
+                quizEnded = true;
+            }
         }
     }, 1000);
 };
@@ -106,7 +112,10 @@ const iterateQuestion = () => {
     if (questionNumber < testQuestionsArr.length) {
         // Display the next question and generate buttons for the answers
         quizQuestions();
-    } 
+    } else {
+        // If there are no more questions, end the quiz
+        endQuiz();
+    }
 };
 
 // showProgress displays notification whether answer is right or wrong
