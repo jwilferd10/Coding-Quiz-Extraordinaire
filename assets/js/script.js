@@ -1,12 +1,12 @@
-let questionEl = document.getElementById("question");
-let potentialAnswersEl = document.getElementById("potentialAnswers");
-let scoreEl = document.getElementById("finalResults");
-let highScoresListEl = document.getElementById("highScoresList");
-let timerEl = document.getElementById("timer");
-let initialsInput = document.querySelector('#initials');
-let saveButtonEl = document.getElementById('save');
-let msgDiv = document.querySelector('#msg');
-let homeBtnEl = document.getElementById("homebtn")
+const questionEl = document.getElementById("question");
+const potentialAnswersEl = document.getElementById("potentialAnswers");
+const scoreEl = document.getElementById("finalResults");
+const highScoresListEl = document.getElementById("highScoresList");
+const timerEl = document.getElementById("timer");
+const initialsInput = document.querySelector('#initials');
+const saveButtonEl = document.getElementById('save');
+const msgDiv = document.querySelector('#msg');
+const homeBtnEl = document.getElementById("homebtn")
 
 let progressEl = document.getElementsByClassName("progress") [0]
 let userInfoArr = JSON.parse(localStorage.getItem('userInfoArr')) || [];
@@ -23,7 +23,7 @@ const testQuestionsArr = [
     { question: "A very useful tool used during development and debugging for printing content to the debugger is:", answers: [ "1. JavaScript", "2. terminal/bash", "3. for loops", "4. console.log"], correctAnswer: "4. console.log" }
 ];
 
-let startQuiz = function() {
+let startQuiz = () => {
     // When the quiz is started, hide the intro and display the quiz to users
     document.getElementById("intro").classList.add("hidden");  
     document.getElementById("quiz").classList.remove("hidden");
@@ -34,7 +34,7 @@ let startQuiz = function() {
     quizQuestions();
 };
 
-let startTimer = function() {
+let startTimer = () => {
     let timer = setInterval(function() {
         // decrement timeLeft
         timeLeft --;
@@ -48,7 +48,7 @@ let startTimer = function() {
     }, 1000);
 };
 
-let quizQuestions = function() {
+const quizQuestions = () => {
     // increment through array
     questionNumber++
 
@@ -58,7 +58,7 @@ let quizQuestions = function() {
     generateBtns();
 };
 
-let generateBtns = function () {
+const generateBtns = () => {
     // potentialAnswersEl is an empty string & Then answersObj displays our list of possible answers from the array of objects & then reaches for our correctAnswer in the array
     potentialAnswersEl.innerHTML = "";
     let answersObj = testQuestionsArr[questionNumber].answers;
@@ -72,12 +72,12 @@ let generateBtns = function () {
         answerBtn = potentialAnswersEl.appendChild(answerChoices);
         answerBtn.addEventListener("click", function(event) {
             iterateQuestion();
-        })
-    } ;  
+        });
+    };  
 };
 
 // connected to the answer buttons generated in the above code
-let iterateQuestion = function() {
+const iterateQuestion = () => {
     // when the button is clicked this furthers users progress
     if (answer === event.target.textContent) {
         // Let user know answer is correct
@@ -97,17 +97,13 @@ let iterateQuestion = function() {
 };
 
 // showProgress displays notification whether answer is right or wrong
-let showProgress = function() {
-    progressEl.removeAttribute("style");
-};
+const showProgress = () => progressEl.removeAttribute("style");
 
 // hideProgress removes the notification after a set amount of time
-let hideProgress = function() {
-    progressEl.style.display="none";
-};
+const hideProgress = () => progressEl.style.display="none";
 
 // show user score after the quiz is complete. Present user option to go back to main page or log current score.
-let endQuiz = function() {
+const endQuiz = () => {
     // conceal the quiz when finished & show the results
     document.getElementById("quiz").classList.add("hidden");
     document.getElementById("timer").classList.add("hidden");
@@ -169,7 +165,7 @@ let endQuiz = function() {
 };
 
 // Function to register users score
-let scoreRegistration = function() {
+const scoreRegistration = () => {
     // High-score entry page goes here
     document.getElementById("finalResults").classList.add("hidden");
     document.getElementById("enterScore").classList.remove("hidden");
@@ -217,7 +213,7 @@ let scoreRegistration = function() {
 }
 
 // Function to save users score
-let saveScore = function() {
+const saveScore = () => {
     // Grab the value from initial and timeLeft
     let initialsInput = document.querySelector('#initials').value;
     let finalScore = timeLeft;
@@ -254,7 +250,7 @@ let saveScore = function() {
 };
 
 // create a function that shows high scores from localStorage
-let showHighScore = function() {
+const showHighScore = () => {
     // clicking the high score button reveals the CSS, hides the intro
     document.getElementById("scoreSectionID").classList.remove("hidden");
     document.getElementById("intro").classList.add("hidden");
@@ -279,9 +275,6 @@ let showHighScore = function() {
 };
 
 // add an event listener to take users home
-homeBtnEl.addEventListener("click", function() {
-    location.reload();
-});
-
+homeBtnEl.addEventListener("click", () => location.reload());
 document.querySelector("#start-btn").addEventListener("click", startQuiz);
 document.querySelector("#highscore").addEventListener("click", showHighScore)
