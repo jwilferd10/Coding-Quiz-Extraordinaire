@@ -261,7 +261,6 @@ const showHighScore = () => {
     if (!highScores) {
         return false;
     } 
-    console.log("Saved score found!");
 
     highScores = JSON.parse(highScores);
 
