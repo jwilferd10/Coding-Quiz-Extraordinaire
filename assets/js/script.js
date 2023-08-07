@@ -59,21 +59,29 @@ const quizQuestions = () => {
 };
 
 const generateBtns = () => {
-    // potentialAnswersEl is an empty string & Then answersObj displays our list of possible answers from the array of objects & then reaches for our correctAnswer in the array
     potentialAnswersEl.innerHTML = "";
-    let answersObj = testQuestionsArr[questionNumber].answers;
-    answer = testQuestionsArr[questionNumber].correctAnswer;
+    const answersObj = testQuestionsArr[questionNumber].answers;
     
-    // display the array of possible answers
+    // Initialize an empty string to store the HTML 
+    let answerBtnsHTML = "";
+
+    // Build the HTML string for answer buttons within a for loop
     for (let i = 0; i < answersObj.length; i++) {
-        let answerChoices = document.createElement("button");
-        answerChoices.className = "potentialAnswer";
-        answerChoices.textContent = answersObj[i];
-        answerBtn = potentialAnswersEl.appendChild(answerChoices);
-        answerBtn.addEventListener("click", function(event) {
+        answerBtnsHTML += `<button class="potentialAnswer">${answersObj[i]}</button>`;
+    }
+
+    // Append the entire HTML string to the potentialAnswersEl at once
+    potentialAnswersEl.innerHTML = answerBtnsHTML;
+    
+    // Add event listeners to the newly created answer buttons
+    const answerBtns = potentialAnswersEl.querySelectorAll(".potentialAnswer");
+
+    answerBtns.forEach((btn) => {
+        btn.addEventListener("click", function(event) {
+            answer = testQuestionsArr[questionNumber].correctAnswer;
             iterateQuestion();
         });
-    };  
+    }); 
 };
 
 // connected to the answer buttons generated in the above code
