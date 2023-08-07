@@ -112,9 +112,6 @@ const iterateQuestion = () => {
     if (questionNumber < testQuestionsArr.length) {
         // Display the next question and generate buttons for the answers
         quizQuestions();
-    } else {
-        // If there are no more questions, end the quiz
-        endQuiz();
     }
 };
 
