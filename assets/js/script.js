@@ -1,12 +1,12 @@
-const questionEl = document.getElementById("question");
-const potentialAnswersEl = document.getElementById("potentialAnswers");
-const scoreEl = document.getElementById("finalResults");
-const highScoresListEl = document.getElementById("highScoresList");
-const timerEl = document.getElementById("timer");
+const questionEl = document.querySelector("#question");
+const potentialAnswersEl = document.querySelector("#potentialAnswers");
+const scoreEl = document.querySelector("#finalResults");
+const highScoresListEl = document.querySelector("#highScoresList");
+const timerEl = document.querySelector("#timer");
 const initialsInput = document.querySelector('#initials');
-const saveButtonEl = document.getElementById('save');
+const saveButtonEl = document.querySelector('#save');
 const msgDiv = document.querySelector('#msg');
-const homeBtnEl = document.getElementById("homebtn")
+const homeBtnEl = document.querySelector("#homebtn");
 
 let progressEl = document.getElementsByClassName("progress") [0]
 let userInfoArr = JSON.parse(localStorage.getItem('userInfoArr')) || [];
