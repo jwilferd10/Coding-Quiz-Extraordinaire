@@ -8,11 +8,11 @@ const saveButtonEl = document.querySelector('#save');
 const msgDiv = document.querySelector('#msg');
 const homeBtnEl = document.querySelector("#homebtn");
 
-let progressEl = document.getElementsByClassName("progress") [0]
-let userInfoArr = JSON.parse(localStorage.getItem('userInfoArr')) || [];
+const progressEl = document.querySelector(".progress");
+const userInfoArr = JSON.parse(localStorage.getItem('userInfoArr')) || [];
 
 let timeLeft = 60;
-let questionNumber = -1; // questions will start at -1, using 0 will skip a question
+let questionNumber = 0; // questions will start at -1, using 0 will skip a question
 
 // quiz questions array with answer selections and correct answer
 const testQuestionsArr = [
@@ -49,13 +49,11 @@ let startTimer = () => {
 };
 
 const quizQuestions = () => {
-    // increment through array
-    questionNumber++
+    // Generate buttons for the answers first
+    generateBtns();
 
     // questionEl takes the textContent from questionNumber and displays the current question from the array
     questionEl.textContent = testQuestionsArr[questionNumber].question
-     
-    generateBtns();
 };
 
 const generateBtns = () => {
@@ -100,8 +98,15 @@ const iterateQuestion = () => {
         timeLeft = timeLeft - 10;
         showProgress();
     }
-    // continue to iterate through next questions
-    quizQuestions();
+
+    // Continue to the next question 
+    questionNumber++;
+
+    // Check if there are more questions in the array 
+    if (questionNumber < testQuestionsArr.length) {
+        // Display the next question and generate buttons for the answers
+        quizQuestions();
+    } 
 };
 
 // showProgress displays notification whether answer is right or wrong
