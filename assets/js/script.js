@@ -202,8 +202,7 @@ const scoreRegistration = () => {
         savedScore.appendChild(enteredInfo);
 
         let returnBtn = document.createElement('button');
-        returnBtn.classList.add('btn');
-        returnBtn.classList.add('returnBtn');
+        returnBtn.classList.add('btn', 'returnBtn');
         returnBtn.textContent = "Return";
         savedScore.appendChild(returnBtn);
 
@@ -212,8 +211,7 @@ const scoreRegistration = () => {
 
     // lets try to return users back to main page
     let returnBtn = document.createElement('button');
-    returnBtn.classList.add('btn');
-    returnBtn.classList.add('returnBtn');
+    returnBtn.classList.add('btn', 'returnBtn');
     returnBtn.textContent = "Return";
     enterScore.appendChild(returnBtn);
  
