@@ -144,9 +144,7 @@ const endQuiz = () => {
         backBtn.textContent = "Back";
         scoreEl.appendChild(backBtn);
 
-        backBtn.addEventListener("click", function() {
-            location.reload();
-        })
+        backBtn.addEventListener("click", () => location.reload());
 
     } else {
         // if score is >0 display score entry
@@ -166,9 +164,7 @@ const endQuiz = () => {
         scoreEl.appendChild(mainPageBtn);
 
         // reloads the entire page, resetting the time and the question in the process
-        mainPageBtn.addEventListener("click", function() {
-            location.reload();
-        })
+        mainPageBtn.addEventListener("click", () => location.reload());
 
         // high-score entry page 
         let enterScoreBtn = document.createElement('button');
@@ -177,9 +173,7 @@ const endQuiz = () => {
         scoreEl.appendChild(enterScoreBtn);
 
         // call ScoreRegistration to bring up the entry page
-        enterScoreBtn.addEventListener("click", function() {
-           scoreRegistration();
-        })
+        enterScoreBtn.addEventListener("click", () => scoreRegistration());
     }
 };
 
@@ -196,7 +190,7 @@ const scoreRegistration = () => {
     enterScore.appendChild(scoreNotification);
 
     // Saves user initials
-    saveButtonEl.addEventListener('click', function(event) {
+    saveButtonEl.addEventListener('click', (event) => {
         // run saveScore function
         saveScore();
         event.preventDefault();
@@ -213,9 +207,7 @@ const scoreRegistration = () => {
         returnBtn.textContent = "Return";
         savedScore.appendChild(returnBtn);
 
-        returnBtn.addEventListener("click", function() {
-            location.reload();
-        })
+        returnBtn.addEventListener("click", () => location.reload());
     });
 
     // lets try to return users back to main page
@@ -226,9 +218,7 @@ const scoreRegistration = () => {
     enterScore.appendChild(returnBtn);
  
     // reloads the entire page, resetting the time and the question in the process
-    returnBtn.addEventListener("click", function() {
-        location.reload();
-    })
+    returnBtn.addEventListener("click", () => location.reload());
 }
 
 // Function to save users score
