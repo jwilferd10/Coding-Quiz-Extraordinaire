@@ -14,6 +14,7 @@ const progressEl = document.querySelector(".progress");
 let timeLeft = 60;
 let questionNumber = 0;
 let quizEnded = false;
+let progressTimeout;
 
 // localStorage 
 const userInfoArr = JSON.parse(localStorage.getItem('userInfoArr')) || [];
@@ -90,17 +91,18 @@ const generateBtns = () => {
 
 // connected to the answer buttons generated in the above code
 const iterateQuestion = () => {
+    // Clear any existing timeout
+    clearTimeout(progressTimeout);
+
     // when the button is clicked this furthers users progress
     if (answer === event.target.textContent) {
         // Let user know answer is correct
         progressEl.textContent = "Correct Answer!"
-        setTimeout(hideProgress, 3000);
         showProgress();
     }
     else { 
         // Let user know answer is incorrect
         progressEl.textContent = "Incorrect Answer!";;
-        setTimeout(hideProgress, 3000);
         timeLeft = timeLeft - 10;
         showProgress();
     }
@@ -113,6 +115,9 @@ const iterateQuestion = () => {
         // Display the next question and generate buttons for the answers
         quizQuestions();
     }
+
+    // Set a new timeout for hiding the progress message
+    progressTimeout = setTimeout(hideProgress, 3000);
 };
 
 // showProgress displays notification whether answer is right or wrong
@@ -123,6 +128,9 @@ const hideProgress = () => progressEl.style.display="none";
 
 // show user score after the quiz is complete. Present user option to go back to main page or log current score.
 const endQuiz = () => {
+    // Clear the interval
+    clearInterval(timer);
+
     // conceal the quiz when finished & show the results
     document.getElementById("quiz").classList.add("hidden");
     document.getElementById("timer").classList.add("hidden");
